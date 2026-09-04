@@ -1,0 +1,4109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+TecBrasil | Escola Técnica Online
+</title>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+rel="stylesheet">
+
+<script
+src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js">
+</script>
+
+
+<style>
+
+:root {
+
+    --blue-dark: #050b48;
+
+    --blue: #111fbd;
+
+    --blue-light: #1a45ff;
+
+    --purple: #7029ff;
+
+    --purple-light: #9b58ff;
+
+    --cyan: #41ddff;
+
+    --cyan-light: #a6f4ff;
+
+    --white: #ffffff;
+
+    --text-soft: #cdd7ff;
+
+    --glass: rgba(255, 255, 255, 0.08);
+
+    --glass-hover: rgba(255, 255, 255, 0.14);
+
+    --border: rgba(255, 255, 255, 0.16);
+
+    --shadow:
+        0 30px 70px rgba(0,0,0,.28);
+
+}
+
+
+/* ========================= */
+/* CONFIGURAÇÕES GERAIS */
+/* ========================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        "Rajdhani",
+        Arial,
+        sans-serif;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(91, 47, 255, .50),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(0, 215, 255, .19),
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 70% 70%,
+            rgba(164, 50, 255, .20),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #050a46,
+            #101c9b 38%,
+            #3e1ca9 68%,
+            #11155d
+        );
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+}
+
+
+/* GRADE DO FUNDO */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -2;
+
+    opacity: .14;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.12) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.12) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        55px 55px;
+
+}
+
+
+/* LUZ DO FUNDO */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 650px;
+
+    height: 650px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(42, 213, 255, .09);
+
+    filter: blur(110px);
+
+    right: -220px;
+
+    top: 80px;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+button,
+input {
+
+    font-family: inherit;
+
+}
+
+
+.container {
+
+    width:
+        min(
+            1180px,
+            calc(100% - 40px)
+        );
+
+    margin: auto;
+
+}
+
+
+section {
+
+    padding:
+        100px 0;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+}
+
+
+
+/* ========================= */
+/* MENU */
+/* ========================= */
+
+.topbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    background:
+        rgba(4, 9, 58, .72);
+
+    backdrop-filter:
+        blur(22px);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+
+}
+
+
+nav {
+
+    height: 82px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap: 30px;
+
+}
+
+
+
+/* LOGO */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.logo-site {
+
+    width: 145px;
+
+    height: 58px;
+
+    object-fit: contain;
+
+    filter:
+
+        drop-shadow(
+            0 0 15px
+            rgba(63, 219, 255, .28)
+        );
+
+    transition:
+        .25s;
+
+}
+
+
+.logo-site:hover {
+
+    transform:
+        scale(1.04);
+
+}
+
+
+
+/* LINKS MENU */
+
+.navlinks {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.navlinks a {
+
+    position: relative;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    color:
+        rgba(255,255,255,.78);
+
+    transition: .25s;
+
+}
+
+
+.navlinks a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple-light)
+        );
+
+    border-radius: 99px;
+
+    transition:
+        .25s;
+
+}
+
+
+.navlinks a:hover {
+
+    color: white;
+
+}
+
+
+.navlinks a:hover::after {
+
+    width: 100%;
+
+}
+
+
+
+.nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+
+/* ========================= */
+/* BOTÕES */
+/* ========================= */
+
+.btn {
+
+    border: none;
+
+    cursor: pointer;
+
+    padding:
+        13px 20px;
+
+    border-radius:
+        14px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap: 9px;
+
+    font-size:
+        16px;
+
+    font-weight:
+        800;
+
+    transition:
+        .25s ease;
+
+}
+
+
+.btn svg {
+
+    width:
+        19px;
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.btn-primary {
+
+    color:
+        #081054;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #9cecff
+        );
+
+    box-shadow:
+
+        0 10px 32px
+        rgba(63, 215, 255, .23);
+
+}
+
+
+.btn-primary:hover {
+
+    box-shadow:
+
+        0 15px 42px
+        rgba(63, 215, 255, .35);
+
+}
+
+
+.btn-ghost {
+
+    color:
+        white;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.17);
+
+}
+
+
+.btn-ghost:hover {
+
+    background:
+        rgba(255,255,255,.13);
+
+}
+
+
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero {
+
+    min-height:
+        calc(100vh - 82px);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    padding:
+        80px 0;
+
+}
+
+
+.hero-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1.05fr .95fr;
+
+    align-items:
+        center;
+
+    gap:
+        70px;
+
+}
+
+
+
+/* ETIQUETAS */
+
+.kicker {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    padding:
+        8px 14px;
+
+    border-radius:
+        999px;
+
+    border:
+        1px solid
+        rgba(130, 235, 255, .42);
+
+    background:
+        rgba(69, 219, 255, .09);
+
+    color:
+        #bdf7ff;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .7px;
+
+    box-shadow:
+
+        inset
+        0 0 18px
+        rgba(76, 210, 255, .06);
+
+}
+
+
+
+.hero h1 {
+
+    font-size:
+
+        clamp(
+            46px,
+            6.5vw,
+            82px
+        );
+
+    line-height:
+        1.02;
+
+    letter-spacing:
+        -3px;
+
+    margin:
+        23px 0;
+
+}
+
+
+.hero h1 span {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #74e9ff,
+            #b786ff
+        );
+
+    background-clip:
+        text;
+
+    -webkit-background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+}
+
+
+.hero-description {
+
+    max-width:
+        650px;
+
+    color:
+        #cdd7ff;
+
+    font-size:
+        21px;
+
+    line-height:
+        1.55;
+
+}
+
+
+.hero-buttons {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        13px;
+
+    margin-top:
+        30px;
+
+}
+
+
+
+/* ESTATÍSTICAS */
+
+.stats {
+
+    display:
+        flex;
+
+    gap:
+        18px;
+
+    flex-wrap:
+        wrap;
+
+    margin-top:
+        40px;
+
+}
+
+
+.stat {
+
+    padding:
+        15px 20px;
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    border:
+        1px solid
+        rgba(255,255,255,.11);
+
+    min-width:
+        135px;
+
+}
+
+
+.stat strong {
+
+    display:
+        block;
+
+    font-family:
+        Orbitron;
+
+    font-size:
+        22px;
+
+    color:
+        var(--cyan-light);
+
+}
+
+
+.stat span {
+
+    font-size:
+        14px;
+
+    color:
+        #bfc9ec;
+
+}
+
+
+
+/* HERO LOGO */
+
+.hero-logo {
+
+    position:
+        relative;
+
+    min-height:
+        500px;
+
+    border-radius:
+        40px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.035)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    box-shadow:
+        var(--shadow);
+
+    backdrop-filter:
+        blur(18px);
+
+    overflow:
+        hidden;
+
+}
+
+
+.hero-logo::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        300px;
+
+    height:
+        300px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(56, 222, 255, .29),
+            transparent 68%
+        );
+
+    filter:
+        blur(10px);
+
+}
+
+
+.hero-logo::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        310px;
+
+    height:
+        310px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    border-radius:
+        55px;
+
+    transform:
+        rotate(28deg);
+
+}
+
+
+.hero-logo img {
+
+    width:
+        min(92%, 520px);
+
+    max-height:
+        420px;
+
+    object-fit:
+        contain;
+
+    z-index:
+        2;
+
+    position:
+        relative;
+
+    filter:
+
+        drop-shadow(
+            0 25px 45px
+            rgba(0,0,0,.35)
+        );
+
+    animation:
+        floating
+        5s ease-in-out
+        infinite;
+
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-13px);
+
+    }
+
+}
+
+
+
+/* ========================= */
+/* TEXTOS DE SEÇÃO */
+/* ========================= */
+
+.section-header {
+
+    margin-bottom:
+        45px;
+
+}
+
+
+.section-title {
+
+    font-size:
+
+        clamp(
+            34px,
+            4.5vw,
+            55px
+        );
+
+    line-height:
+        1.12;
+
+    margin:
+        14px 0 14px;
+
+}
+
+
+.section-description {
+
+    max-width:
+        720px;
+
+    font-size:
+        19px;
+
+    color:
+        var(--text-soft);
+
+    line-height:
+        1.6;
+
+}
+
+
+
+/* ========================= */
+/* GLASS */
+/* ========================= */
+
+.glass {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.105),
+            rgba(255,255,255,.045)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    backdrop-filter:
+        blur(18px);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+
+/* ========================= */
+/* QUEM SOMOS */
+/* ========================= */
+
+.about-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        65px;
+
+    align-items:
+        center;
+
+}
+
+
+.content-card {
+
+    padding:
+        42px;
+
+    border-radius:
+        30px;
+
+}
+
+
+.content-card p {
+
+    font-size:
+        21px;
+
+    line-height:
+        1.7;
+
+    color:
+        #d7ddf9;
+
+}
+
+
+.highlight {
+
+    color:
+        #8ff1ff;
+
+    font-weight:
+        800;
+
+}
+
+
+.visual {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+}
+
+
+.visual::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        340px;
+
+    height:
+        340px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(96, 89, 255, .20);
+
+    filter:
+        blur(65px);
+
+}
+
+
+.visual img {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        100%;
+
+    max-height:
+        550px;
+
+    object-fit:
+        contain;
+
+    filter:
+
+        drop-shadow(
+            0 28px 45px
+            rgba(0,0,0,.25)
+        );
+
+}
+
+
+
+/* ========================= */
+/* QUALIDADE */
+/* ========================= */
+
+.quality-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:
+        65px;
+
+    align-items:
+        center;
+
+}
+
+
+
+/* ========================= */
+/* CURSOS */
+/* ========================= */
+
+.course-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        22px;
+
+}
+
+
+.course-card {
+
+    position:
+        relative;
+
+    padding:
+        28px;
+
+    border-radius:
+        26px;
+
+    overflow:
+        hidden;
+
+    cursor:
+        pointer;
+
+    min-height:
+        315px;
+
+    transition:
+        .3s ease;
+
+}
+
+
+.course-card::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    right:
+        -80px;
+
+    bottom:
+        -100px;
+
+    width:
+        200px;
+
+    height:
+        200px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(53, 219, 255, .13);
+
+    transition:
+        .3s;
+
+}
+
+
+.course-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(125, 234, 255, .40);
+
+    background:
+        rgba(255,255,255,.12);
+
+}
+
+
+.course-card:hover::before {
+
+    transform:
+        scale(1.5);
+
+}
+
+
+.badge {
+
+    display:
+        inline-block;
+
+    padding:
+        6px 11px;
+
+    border-radius:
+        999px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:
+        #bff5ff;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        .7px;
+
+}
+
+
+.course-icon {
+
+    width:
+        64px;
+
+    height:
+        64px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        19px;
+
+    margin:
+        28px 0 23px;
+
+    color:
+        #d8faff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(72, 220, 255, .17),
+            rgba(139, 77, 255, .19)
+        );
+
+    border:
+        1px solid
+        rgba(152, 235, 255, .18);
+
+}
+
+
+.course-icon svg {
+
+    width:
+        30px;
+
+    height:
+        30px;
+
+}
+
+
+.course-card h3 {
+
+    font-size:
+        20px;
+
+    line-height:
+        1.35;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+.course-card p {
+
+    color:
+        #c9d2ee;
+
+    line-height:
+        1.55;
+
+    font-size:
+        17px;
+
+}
+
+
+.course-more {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        6px;
+
+    color:
+        #92efff;
+
+    margin-top:
+        20px;
+
+    font-weight:
+        700;
+
+}
+
+
+
+/* ========================= */
+/* REGRAS */
+/* ========================= */
+
+.rules {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        22px;
+
+}
+
+
+.rule {
+
+    padding:
+        34px 28px;
+
+    border-radius:
+        28px;
+
+    transition:
+        .3s;
+
+}
+
+
+.rule:hover {
+
+    transform:
+        translateY(-8px);
+
+}
+
+
+.rule-icon {
+
+    width:
+        75px;
+
+    height:
+        75px;
+
+    border-radius:
+        23px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin-bottom:
+        24px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(48, 226, 255, .19),
+            rgba(159, 80, 255, .20)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.16);
+
+}
+
+
+.rule-icon svg {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+}
+
+
+.rule h3 {
+
+    font-size:
+        20px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.rule p {
+
+    color:
+        #cfd6ef;
+
+    font-size:
+        17px;
+
+    line-height:
+        1.6;
+
+    margin-bottom:
+        15px;
+
+}
+
+
+.schedule {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        10px;
+
+    margin-top:
+        20px;
+
+}
+
+
+.schedule-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        10px;
+
+    padding:
+        11px 13px;
+
+    border-radius:
+        12px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,.10);
+
+}
+
+
+.schedule-item strong {
+
+    color:
+        #baf6ff;
+
+}
+
+
+
+/* ========================= */
+/* ÁREA DO ALUNO */
+/* ========================= */
+
+.portal-wrapper {
+
+    padding:
+        45px;
+
+    border-radius:
+        34px;
+
+}
+
+
+.portal {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        .95fr 1.05fr;
+
+    gap:
+        65px;
+
+    align-items:
+        center;
+
+}
+
+
+.progress-container {
+
+    margin-top:
+        30px;
+
+}
+
+
+.progress-info {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom:
+        10px;
+
+    color:
+        #d5ddf7;
+
+}
+
+
+.progress-bar {
+
+    height:
+        11px;
+
+    border-radius:
+        999px;
+
+    overflow:
+        hidden;
+
+    background:
+        rgba(255,255,255,.08);
+
+}
+
+
+.progress-fill {
+
+    width:
+        64%;
+
+    height:
+        100%;
+
+    border-radius:
+        inherit;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #48e1ff,
+            #8058ff
+        );
+
+    box-shadow:
+
+        0 0 22px
+        rgba(64, 226, 255, .25);
+
+}
+
+
+
+.login-card {
+
+    padding:
+        32px;
+
+    border-radius:
+        26px;
+
+    background:
+        rgba(1, 8, 62, .24);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+}
+
+
+.login-card h3 {
+
+    margin-bottom:
+        25px;
+
+}
+
+
+label {
+
+    display:
+        block;
+
+    margin-bottom:
+        18px;
+
+    font-weight:
+        700;
+
+}
+
+
+.input-group {
+
+    position:
+        relative;
+
+    margin-top:
+        7px;
+
+}
+
+
+.input-group svg {
+
+    position:
+        absolute;
+
+    width:
+        19px;
+
+    left:
+        14px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        #aab8ec;
+
+}
+
+
+.input {
+
+    width:
+        100%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    outline:
+        none;
+
+    border-radius:
+        13px;
+
+    padding:
+        14px 14px 14px 45px;
+
+    background:
+        rgba(255,255,255,.055);
+
+    color:
+        white;
+
+    font-size:
+        16px;
+
+    transition:
+        .25s;
+
+}
+
+
+.input:focus {
+
+    border-color:
+        rgba(93, 222, 255, .65);
+
+    background:
+        rgba(255,255,255,.09);
+
+    box-shadow:
+
+        0 0 0 3px
+        rgba(65, 221, 255, .08);
+
+}
+
+
+.input::placeholder {
+
+    color:
+        rgba(220,225,255,.48);
+
+}
+
+
+
+/* ========================= */
+/* FINAL */
+/* ========================= */
+
+.final {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    align-items:
+        center;
+
+    gap:
+        60px;
+
+}
+
+
+.final h2 {
+
+    font-size:
+
+        clamp(
+            43px,
+            6vw,
+            78px
+        );
+
+    line-height:
+        1.03;
+
+    letter-spacing:
+        -2px;
+
+}
+
+
+.final p {
+
+    font-size:
+        25px;
+
+    color:
+        #d7defb;
+
+    letter-spacing:
+        1px;
+
+    margin:
+        18px 0 30px;
+
+}
+
+
+.final-image {
+
+    position:
+        relative;
+
+}
+
+
+.final-image::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        350px;
+
+    height:
+        350px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(68, 219, 255, .17);
+
+    filter:
+        blur(65px);
+
+}
+
+
+.final-image img {
+
+    width:
+        100%;
+
+    max-height:
+        520px;
+
+    object-fit:
+        contain;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+    padding:
+        30px 0;
+
+    background:
+        rgba(3, 8, 55, .34);
+
+}
+
+
+.footer-row {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+}
+
+
+.footer-logo {
+
+    width:
+        125px;
+
+    height:
+        50px;
+
+    object-fit:
+        contain;
+
+}
+
+
+footer p {
+
+    color:
+        #aab5d9;
+
+}
+
+
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
+
+.modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        500;
+
+    background:
+        rgba(1, 4, 30, .78);
+
+    backdrop-filter:
+        blur(10px);
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        20px;
+
+}
+
+
+.modal.open {
+
+    display:
+        flex;
+
+}
+
+
+.modal-content {
+
+    width:
+        min(520px, 100%);
+
+    padding:
+        32px;
+
+    border-radius:
+        27px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #101a82,
+            #311b92
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,.17);
+
+    box-shadow:
+        0 30px 80px
+        rgba(0,0,0,.45);
+
+}
+
+
+.modal-header {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    justify-content:
+        space-between;
+
+    gap:
+        20px;
+
+}
+
+
+.modal-header h3 {
+
+    font-size:
+        24px;
+
+}
+
+
+.close {
+
+    width:
+        40px;
+
+    height:
+        40px;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:
+        white;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    cursor:
+        pointer;
+
+}
+
+
+.lesson {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        15px;
+
+    padding:
+        15px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.11);
+
+}
+
+
+.lesson small {
+
+    color:
+        #aeb9df;
+
+}
+
+
+
+/* ========================= */
+/* TOAST */
+/* ========================= */
+
+.toast {
+
+    position:
+        fixed;
+
+    z-index:
+        600;
+
+    right:
+        20px;
+
+    bottom:
+        20px;
+
+    padding:
+        14px 20px;
+
+    border-radius:
+        14px;
+
+    background:
+        #08105a;
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,.32);
+
+    transform:
+        translateY(100px);
+
+    opacity:
+        0;
+
+    transition:
+        .3s;
+
+}
+
+
+.toast.show {
+
+    transform:
+        translateY(0);
+
+    opacity:
+        1;
+
+}
+
+
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media(max-width: 950px) {
+
+    .navlinks {
+
+        display:
+            none;
+
+    }
+
+
+    .hero-grid,
+    .about-grid,
+    .quality-grid,
+    .portal,
+    .final {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .hero {
+
+        text-align:
+            center;
+
+    }
+
+
+    .hero-description {
+
+        margin:
+            auto;
+
+    }
+
+
+    .hero-buttons,
+    .stats {
+
+        justify-content:
+            center;
+
+    }
+
+
+    .hero-logo {
+
+        min-height:
+            400px;
+
+    }
+
+
+    .course-grid,
+    .rules {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+
+@media(max-width: 650px) {
+
+    .container {
+
+        width:
+            min(
+                100% - 24px,
+                1180px
+            );
+
+    }
+
+
+    section {
+
+        padding:
+            70px 0;
+
+    }
+
+
+    .nav-actions
+    .btn-ghost {
+
+        display:
+            none;
+
+    }
+
+
+    .logo-site {
+
+        width:
+            120px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            43px;
+
+    }
+
+
+    .hero-description {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .hero-logo {
+
+        min-height:
+            300px;
+
+    }
+
+
+    .course-grid,
+    .rules {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .content-card,
+    .portal-wrapper {
+
+        padding:
+            25px;
+
+    }
+
+
+    .footer-row {
+
+        flex-direction:
+            column;
+
+        text-align:
+            center;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================= -->
+<!-- MENU -->
+<!-- ========================= -->
+
+<header class="topbar">
+
+<div class="container">
+
+<nav>
+
+
+<a href="#inicio"
+class="brand">
+
+<img
+src="assets/logo-tecbrasil.png"
+alt="TecBrasil"
+class="logo-site">
+
+</a>
+
+
+<div class="navlinks">
+
+<a href="#sobre">
+Quem somos
+</a>
+
+<a href="#qualidade">
+Qualidade
+</a>
+
+<a href="#cursos">
+Cursos
+</a>
+
+<a href="#regras">
+Como funciona
+</a>
+
+</div>
+
+
+<div class="nav-actions">
+
+
+<button
+class="btn btn-ghost"
+id="loginOpen">
+
+<i data-lucide="user"></i>
+
+Entrar
+
+</button>
+
+
+<a
+href="#cursos"
+class="btn btn-primary">
+
+<i data-lucide="rocket"></i>
+
+Começar
+
+</a>
+
+
+</div>
+
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+
+<!-- ========================= -->
+<!-- INÍCIO -->
+<!-- ========================= -->
+
+<section
+class="hero"
+id="inicio">
+
+
+<div
+class="container hero-grid">
+
+
+<div>
+
+
+<div class="kicker">
+
+<i data-lucide="cpu"></i>
+
+ESCOLA TÉCNICA ONLINE
+
+</div>
+
+
+<h1>
+
+Seu futuro
+
+<span>
+começa aqui.
+</span>
+
+</h1>
+
+
+<p
+class="hero-description">
+
+A TecBrasil é uma plataforma
+de cursos profissionalizantes
+100% online criada para levar
+conhecimento sobre tecnologia
+até você, sem precisar sair
+de casa.
+
+</p>
+
+
+<div class="hero-buttons">
+
+
+<a
+href="#cursos"
+class="btn btn-primary">
+
+<i data-lucide="book-open"></i>
+
+Explorar cursos
+
+</a>
+
+
+<a
+href="#sobre"
+class="btn btn-ghost">
+
+<i data-lucide="circle-help"></i>
+
+Conheça a TecBrasil
+
+</a>
+
+
+</div>
+
+
+
+<div class="stats">
+
+
+<div class="stat">
+
+<strong>
+100%
+</strong>
+
+<span>
+Online
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+3
+</strong>
+
+<span>
+Horários disponíveis
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<strong>
+85%
+</strong>
+
+<span>
+Presença mínima
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="hero-logo">
+
+
+<img
+src="assets/logo-tecbrasil.png"
+alt="Logo da TecBrasil">
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- QUEM SOMOS -->
+<!-- ========================= -->
+
+<section
+id="sobre">
+
+
+<div
+class="container about-grid">
+
+
+<div
+class="content-card glass">
+
+
+<div class="kicker">
+
+<i data-lucide="bot"></i>
+
+QUEM NÓS SOMOS?
+
+</div>
+
+
+<h2
+class="section-title">
+
+Somos a
+TecBrasil.
+
+</h2>
+
+
+<p>
+
+Somos a TecBrasil,
+um grupo buscando criar
+um site de cursos
+profissionalizantes
+
+<span class="highlight">
+
+100% online!
+
+</span>
+
+Para que você possa ter
+a oportunidade de aprender
+tudo sobre o mundo da
+tecnologia sem precisar
+sair de casa!
+
+</p>
+
+
+</div>
+
+
+
+<div class="visual">
+
+
+<img
+src="assets/robo-livro.png"
+alt="Robô TecBrasil lendo livro">
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- QUALIDADE -->
+<!-- ========================= -->
+
+<section
+id="qualidade">
+
+
+<div
+class="container quality-grid">
+
+
+<div class="visual">
+
+<img
+src="assets/notebook-robo.png"
+alt="Notebook tecnológico">
+
+</div>
+
+
+
+<div
+class="content-card glass">
+
+
+<div class="kicker">
+
+<i data-lucide="award"></i>
+
+QUALIDADE DE ENSINO
+
+</div>
+
+
+<h2
+class="section-title">
+
+Tecnologia e
+conhecimento.
+
+</h2>
+
+
+<p>
+
+O curso foi desenvolvido
+com base nos conhecimentos
+de um professor renomado,
+ligado a uma das maiores
+faculdades de desenvolvimento
+de sistemas do mundo:
+
+<span class="highlight">
+
+Instituto de Tecnologia
+de Massachusetts.
+
+</span>
+
+<br><br>
+
+Os professores dos cursos
+possuem formação em áreas
+como Desenvolvimento
+de Sistemas e Tecnologia
+da Informação.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- CURSOS -->
+<!-- ========================= -->
+
+<section
+id="cursos">
+
+
+<div class="container">
+
+
+<div class="section-header">
+
+
+<div class="kicker">
+
+<i data-lucide="layers-3"></i>
+
+CURSOS
+
+</div>
+
+
+<h2
+class="section-title">
+
+Escolha sua
+próxima habilidade.
+
+</h2>
+
+
+<p
+class="section-description">
+
+Aprenda tecnologia através
+de cursos profissionalizantes
+e acompanhe seu progresso
+diretamente na plataforma.
+
+</p>
+
+
+</div>
+
+
+
+<div
+class="course-grid">
+
+
+
+<article
+class="course-card glass"
+data-course="Desenvolvimento de Sistemas">
+
+
+<span class="badge">
+
+PROFISSIONALIZANTE
+
+</span>
+
+
+<div class="course-icon">
+
+<i data-lucide="code-2"></i>
+
+</div>
+
+
+<h3>
+
+Desenvolvimento
+de Sistemas
+
+</h3>
+
+
+<p>
+
+Aprenda lógica,
+programação,
+estrutura de sistemas
+e fundamentos de
+desenvolvimento.
+
+</p>
+
+
+<span class="course-more">
+
+Ver curso
+
+<i data-lucide="arrow-right"></i>
+
+</span>
+
+
+</article>
+
+
+
+<article
+class="course-card glass"
+data-course="Tecnologia da Informação">
+
+
+<span class="badge">
+
+TECNOLOGIA
+
+</span>
+
+
+<div class="course-icon">
+
+<i data-lucide="monitor-cog"></i>
+
+</div>
+
+
+<h3>
+
+Tecnologia
+da Informação
+
+</h3>
+
+
+<p>
+
+Conheça computadores,
+sistemas, redes,
+ferramentas digitais
+e fundamentos de TI.
+
+</p>
+
+
+<span class="course-more">
+
+Ver curso
+
+<i data-lucide="arrow-right"></i>
+
+</span>
+
+
+</article>
+
+
+
+<article
+class="course-card glass"
+data-course="Fundamentos Web">
+
+
+<span class="badge">
+
+DESENVOLVIMENTO WEB
+
+</span>
+
+
+<div class="course-icon">
+
+<i data-lucide="globe-2"></i>
+
+</div>
+
+
+<h3>
+
+Fundamentos
+Web
+
+</h3>
+
+
+<p>
+
+Aprenda os conceitos
+iniciais de sites,
+HTML, CSS e tecnologias
+usadas na internet.
+
+</p>
+
+
+<span class="course-more">
+
+Ver curso
+
+<i data-lucide="arrow-right"></i>
+
+</span>
+
+
+</article>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- REGRAS -->
+<!-- ========================= -->
+
+<section
+id="regras">
+
+
+<div class="container">
+
+
+<div class="section-header">
+
+
+<div class="kicker">
+
+<i data-lucide="circle-check-big"></i>
+
+CONCLUSÃO DO CURSO
+
+</div>
+
+
+<h2
+class="section-title">
+
+Como funciona
+a TecBrasil?
+
+</h2>
+
+
+<p
+class="section-description">
+
+Confira os horários,
+regras de presença
+e o processo necessário
+para concluir o curso.
+
+</p>
+
+
+</div>
+
+
+
+<div class="rules">
+
+
+
+<!-- AULAS -->
+
+<div
+class="rule glass">
+
+
+<div class="rule-icon">
+
+<i data-lucide="video"></i>
+
+</div>
+
+
+<h3>
+
+Aulas
+
+</h3>
+
+
+<p>
+
+Teremos três horários
+de aula em chamada
+de vídeo.
+
+Escolha o período
+que melhor combina
+com sua rotina.
+
+</p>
+
+
+<div class="schedule">
+
+
+<div class="schedule-item">
+
+<strong>
+06:00 — 11:50
+</strong>
+
+<span>
+Manhã
+</span>
+
+</div>
+
+
+<div class="schedule-item">
+
+<strong>
+13:00 — 17:50
+</strong>
+
+<span>
+Tarde
+</span>
+
+</div>
+
+
+<div class="schedule-item">
+
+<strong>
+18:00 — 23:50
+</strong>
+
+<span>
+Noite
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- PRESENÇA -->
+
+<div
+class="rule glass">
+
+
+<div class="rule-icon">
+
+<i data-lucide="user-check"></i>
+
+</div>
+
+
+<h3>
+
+Presença
+
+</h3>
+
+
+<p>
+
+É obrigatório que o
+aluno esteja presente
+em pelo menos
+
+<span class="highlight">
+
+85% das aulas.
+
+</span>
+
+</p>
+
+
+<p>
+
+Em caso de emergência,
+é recomendado avisar
+os professores ou
+entrar em contato
+com o suporte.
+
+</p>
+
+
+</div>
+
+
+
+<!-- CERTIFICADO -->
+
+<div
+class="rule glass">
+
+
+<div class="rule-icon">
+
+<i data-lucide="graduation-cap"></i>
+
+</div>
+
+
+<h3>
+
+Certificado
+
+</h3>
+
+
+<p>
+
+Para conseguir
+o certificado,
+será necessário realizar
+uma prova diagnóstica.
+
+</p>
+
+
+<p>
+
+Depois, o aluno deverá
+explicar passo a passo
+o conteúdo em uma
+
+<span class="highlight">
+
+vídeo aula de até
+45 minutos.
+
+</span>
+
+</p>
+
+
+<p>
+
+Caso seja identificada
+alguma trapaça,
+o aluno será
+desclassificado.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- ÁREA DO ALUNO -->
+<!-- ========================= -->
+
+<section
+id="aluno">
+
+
+<div
+class="container">
+
+
+<div
+class="portal-wrapper glass">
+
+
+<div
+class="portal">
+
+
+
+<div>
+
+
+<div class="kicker">
+
+<i data-lucide="layout-dashboard"></i>
+
+ÁREA DO ALUNO
+
+</div>
+
+
+<h2
+class="section-title">
+
+Seu aprendizado
+em um só lugar.
+
+</h2>
+
+
+<p
+class="section-description">
+
+Acompanhe suas aulas,
+frequência,
+atividades e
+progresso do curso.
+
+</p>
+
+
+
+<div
+class="progress-container">
+
+
+<div
+class="progress-info">
+
+<strong>
+
+Progresso atual
+
+</strong>
+
+<span>
+
+64%
+
+</span>
+
+</div>
+
+
+<div
+class="progress-bar">
+
+
+<div
+class="progress-fill">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<div
+class="login-card">
+
+
+<h3>
+
+Entrar na plataforma
+
+</h3>
+
+
+<label>
+
+E-mail
+
+
+<div
+class="input-group">
+
+<i data-lucide="mail"></i>
+
+<input
+
+class="input"
+
+type="email"
+
+placeholder="aluno@tecbrasil.com">
+
+</div>
+
+
+</label>
+
+
+
+<label>
+
+Senha
+
+
+<div
+class="input-group">
+
+<i data-lucide="lock"></i>
+
+<input
+
+class="input"
+
+type="password"
+
+placeholder="••••••••">
+
+</div>
+
+
+</label>
+
+
+
+<button
+class="btn btn-primary"
+id="portalLogin"
+style="width:100%">
+
+
+<i data-lucide="log-in"></i>
+
+Entrar
+
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- FINAL -->
+<!-- ========================= -->
+
+<section>
+
+
+<div
+class="container final">
+
+
+<div>
+
+
+<div class="kicker">
+
+<i data-lucide="sparkles"></i>
+
+TECBRASIL
+
+</div>
+
+
+<h2>
+
+ESSA É A
+
+<br>
+
+TECBRASIL
+
+</h2>
+
+
+<p>
+
+O SEU FUTURO,
+COMEÇA AQUI!
+
+</p>
+
+
+<a
+href="#cursos"
+class="btn btn-primary">
+
+<i data-lucide="rocket"></i>
+
+Começar agora
+
+</a>
+
+
+</div>
+
+
+
+<div class="final-image">
+
+
+<img
+src="assets/robo-cubo.png"
+alt="Robô TecBrasil">
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- ========================= -->
+<!-- RODAPÉ -->
+<!-- ========================= -->
+
+<footer>
+
+
+<div
+class="container footer-row">
+
+
+<img
+src="assets/logo-tecbrasil.png"
+alt="TecBrasil"
+class="footer-logo">
+
+
+<p>
+
+Escola Técnica Online
+•
+Seu futuro começa aqui.
+
+</p>
+
+
+</div>
+
+
+</footer>
+
+
+
+<!-- ========================= -->
+<!-- MODAL CURSO -->
+<!-- ========================= -->
+
+<div
+class="modal"
+id="courseModal">
+
+
+<div
+class="modal-content">
+
+
+<div
+class="modal-header">
+
+
+<div>
+
+
+<span class="badge">
+
+PRÉVIA DO CURSO
+
+</span>
+
+
+<h3
+id="modalCourseTitle">
+
+Curso
+
+</h3>
+
+
+</div>
+
+
+
+<button
+class="close"
+id="closeCourse">
+
+
+<i data-lucide="x"></i>
+
+
+</button>
+
+
+</div>
+
+
+
+<div class="lesson">
+
+
+<div>
+
+<strong>
+
+01. Introdução
+
+</strong>
+
+<br>
+
+<small>
+
+Apresentação do curso
+
+</small>
+
+</div>
+
+
+<span>
+
+Ao vivo
+
+</span>
+
+
+</div>
+
+
+
+<div class="lesson">
+
+
+<div>
+
+<strong>
+
+02. Fundamentos
+
+</strong>
+
+<br>
+
+<small>
+
+Conteúdo principal
+
+</small>
+
+</div>
+
+
+<span>
+
+Ao vivo
+
+</span>
+
+
+</div>
+
+
+
+<div class="lesson">
+
+
+<div>
+
+<strong>
+
+03. Projeto prático
+
+</strong>
+
+<br>
+
+<small>
+
+Aplicação do conteúdo
+
+</small>
+
+</div>
+
+
+<span>
+
+Ao vivo
+
+</span>
+
+
+</div>
+
+
+
+<button
+class="btn btn-primary"
+id="enrollBtn"
+style="
+width:100%;
+margin-top:25px;
+">
+
+
+<i data-lucide="user-plus"></i>
+
+Quero me matricular
+
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- MODAL LOGIN -->
+<!-- ========================= -->
+
+<div
+class="modal"
+id="loginModal">
+
+
+<div
+class="modal-content">
+
+
+<div
+class="modal-header">
+
+
+<div>
+
+
+<span class="badge">
+
+ÁREA DO ALUNO
+
+</span>
+
+
+<h3>
+
+Entrar
+
+</h3>
+
+
+</div>
+
+
+<button
+class="close"
+id="closeLogin">
+
+
+<i data-lucide="x"></i>
+
+
+</button>
+
+
+</div>
+
+
+
+<label>
+
+E-mail
+
+
+<div
+class="input-group">
+
+<i data-lucide="mail"></i>
+
+
+<input
+class="input"
+placeholder="aluno@tecbrasil.com">
+
+</div>
+
+
+</label>
+
+
+
+<label>
+
+Senha
+
+
+<div
+class="input-group">
+
+<i data-lucide="lock"></i>
+
+
+<input
+class="input"
+type="password"
+placeholder="••••••••">
+
+</div>
+
+
+</label>
+
+
+
+<button
+class="btn btn-primary"
+id="modalLogin"
+style="
+width:100%;
+margin-top:10px;
+">
+
+
+<i data-lucide="log-in"></i>
+
+Entrar
+
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- MENSAGEM -->
+
+<div
+class="toast"
+id="toast">
+
+Ação realizada!
+
+</div>
+
+
+
+<script>
+
+
+/* CARREGAR ÍCONES */
+
+lucide.createIcons();
+
+
+
+/* MENSAGEM */
+
+const toast =
+document.getElementById(
+    "toast"
+);
+
+
+function notification(
+    message
+) {
+
+    toast.innerText =
+        message;
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        () => {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+
+        2500
+    );
+
+}
+
+
+
+/* ========================= */
+/* CURSOS */
+/* ========================= */
+
+const courseModal =
+document.getElementById(
+    "courseModal"
+);
+
+
+const courseTitle =
+document.getElementById(
+    "modalCourseTitle"
+);
+
+
+document
+.querySelectorAll(
+    ".course-card"
+)
+.forEach(
+    card => {
+
+
+        card.addEventListener(
+            "click",
+
+            () => {
+
+
+                courseTitle
+                .innerText =
+
+                    card.dataset.course;
+
+
+                courseModal
+                .classList
+                .add(
+                    "open"
+                );
+
+
+            }
+        );
+
+
+    }
+);
+
+
+
+document
+.getElementById(
+    "closeCourse"
+)
+.addEventListener(
+    "click",
+
+    () => {
+
+        courseModal
+        .classList
+        .remove(
+            "open"
+        );
+
+    }
+);
+
+
+
+document
+.getElementById(
+    "enrollBtn"
+)
+.addEventListener(
+    "click",
+
+    () => {
+
+
+        courseModal
+        .classList
+        .remove(
+            "open"
+        );
+
+
+        notification(
+            "Interesse de matrícula registrado!"
+        );
+
+
+    }
+);
+
+
+
+/* ========================= */
+/* LOGIN */
+/* ========================= */
+
+const loginModal =
+document.getElementById(
+    "loginModal"
+);
+
+
+document
+.getElementById(
+    "loginOpen"
+)
+.addEventListener(
+    "click",
+
+    () => {
+
+        loginModal
+        .classList
+        .add(
+            "open"
+        );
+
+    }
+);
+
+
+document
+.getElementById(
+    "closeLogin"
+)
+.addEventListener(
+    "click",
+
+    () => {
+
+        loginModal
+        .classList
+        .remove(
+            "open"
+        );
+
+    }
+);
+
+
+
+document
+.getElementById(
+    "modalLogin"
+)
+.addEventListener(
+    "click",
+
+    () => {
+
+
+        loginModal
+        .classList
+        .remove(
+            "open"
+        );
+
+
+        notification(
+            "Login demonstrativo realizado!"
+        );
+
+
+    }
+);
+
+
+
+document
+.getElementById(
+    "portalLogin"
+)
+.addEventListener(
+    "click",
+
+    () => {
+
+        notification(
+            "Entrando na área do aluno..."
+        );
+
+    }
+);
+
+
+
+/* CLICAR FORA DO MODAL */
+
+courseModal
+.addEventListener(
+    "click",
+
+    event => {
+
+        if(
+            event.target ===
+            courseModal
+        ) {
+
+            courseModal
+            .classList
+            .remove(
+                "open"
+            );
+
+        }
+
+    }
+);
+
+
+loginModal
+.addEventListener(
+    "click",
+
+    event => {
+
+        if(
+            event.target ===
+            loginModal
+        ) {
+
+            loginModal
+            .classList
+            .remove(
+                "open"
+            );
+
+        }
+
+    }
+);
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -2,372 +2,280 @@
 <html lang="pt-BR">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+    <title>TecBrasil | Escola Técnica Online</title>
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="TecBrasil - Plataforma de cursos profissionalizantes 100% online voltada para tecnologia.">
 
-<title>
-TecBrasil | Escola Técnica Online
-</title>
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
+    <!-- ÍCONES -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap"
-rel="stylesheet">
-
-<script
-src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js">
-</script>
-
-
-<style>
+    <style>
+      /* =====================================================
+   TECBRASIL - CSS COMPLETO
+===================================================== */
 
 :root {
+    --bg: #061a38;
+    --bg-2: #082653;
+    --bg-dark: #031127;
 
-    --blue-dark: #050b48;
+    --card: rgba(8, 35, 72, 0.68);
 
-    --blue: #111fbd;
+    --blue: #168cff;
+    --blue-light: #3aa7ff;
+    --cyan: #20e7ff;
+    --purple: #8c5cff;
 
-    --blue-light: #1a45ff;
+    --text: #f5f9ff;
+    --muted: #a9bdd7;
 
-    --purple: #7029ff;
-
-    --purple-light: #9b58ff;
-
-    --cyan: #41ddff;
-
-    --cyan-light: #a6f4ff;
-
-    --white: #ffffff;
-
-    --text-soft: #cdd7ff;
-
-    --glass: rgba(255, 255, 255, 0.08);
-
-    --glass-hover: rgba(255, 255, 255, 0.14);
-
-    --border: rgba(255, 255, 255, 0.16);
+    --border: rgba(93, 184, 255, 0.20);
 
     --shadow:
-        0 30px 70px rgba(0,0,0,.28);
+        0 20px 70px rgba(0, 0, 0, 0.32);
 
+    --radius: 26px;
 }
 
 
-/* ========================= */
-/* CONFIGURAÇÕES GERAIS */
-/* ========================= */
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
-
 body {
-
-    margin: 0;
-
-    font-family:
-        "Rajdhani",
-        Arial,
-        sans-serif;
-
-    color: white;
+    font-family: "Rajdhani", sans-serif;
 
     background:
-
         radial-gradient(
-            circle at 10% 15%,
-            rgba(91, 47, 255, .50),
-            transparent 28%
+            circle at 15% 10%,
+            rgba(0, 153, 255, 0.30),
+            transparent 35%
         ),
 
         radial-gradient(
-            circle at 85% 20%,
-            rgba(0, 215, 255, .19),
-            transparent 22%
+            circle at 85% 35%,
+            rgba(39, 86, 255, 0.25),
+            transparent 35%
         ),
 
         radial-gradient(
-            circle at 70% 70%,
-            rgba(164, 50, 255, .20),
-            transparent 30%
+            circle at 50% 80%,
+            rgba(0, 119, 255, 0.16),
+            transparent 40%
         ),
 
         linear-gradient(
             135deg,
-            #050a46,
-            #101c9b 38%,
-            #3e1ca9 68%,
-            #11155d
+            #020b1c 0%,
+            #061a38 45%,
+            #071f46 100%
         );
 
-    min-height: 100vh;
+    background-attachment: fixed;
+
+    color: var(--text);
 
     overflow-x: hidden;
 
+    min-height: 100vh;
 }
 
 
-/* GRADE DO FUNDO */
+/* GRID TECNOLÓGICO NO FUNDO */
 
 body::before {
-
     content: "";
 
     position: fixed;
 
     inset: 0;
 
-    pointer-events: none;
-
-    z-index: -2;
-
-    opacity: .14;
-
     background-image:
 
         linear-gradient(
-            rgba(255,255,255,.12) 1px,
+            rgba(79, 174, 255, 0.025) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(255,255,255,.12) 1px,
+            rgba(79, 174, 255, 0.025) 1px,
             transparent 1px
         );
 
-    background-size:
-        55px 55px;
-
-}
-
-
-/* LUZ DO FUNDO */
-
-body::after {
-
-    content: "";
-
-    position: fixed;
-
-    width: 650px;
-
-    height: 650px;
-
-    border-radius: 50%;
-
-    background:
-        rgba(42, 213, 255, .09);
-
-    filter: blur(110px);
-
-    right: -220px;
-
-    top: 80px;
+    background-size: 55px 55px;
 
     pointer-events: none;
 
     z-index: -1;
-
 }
 
+
+img {
+    display: block;
+    max-width: 100%;
+}
 
 a {
-
-    text-decoration: none;
-
     color: inherit;
-
+    text-decoration: none;
 }
-
 
 button,
 input {
+    font: inherit;
+}
 
-    font-family: inherit;
-
+button {
+    cursor: pointer;
 }
 
 
-.container {
+/* =====================================================
+   CONTAINER
+===================================================== */
 
-    width:
-        min(
-            1180px,
-            calc(100% - 40px)
-        );
+.container {
+    width: min(
+        1180px,
+        calc(100% - 40px)
+    );
 
     margin: auto;
-
 }
 
 
 section {
+    padding: 110px 0;
 
-    padding:
-        100px 0;
-
+    position: relative;
 }
 
 
-h1,
-h2,
-h3 {
+/* =====================================================
+   HEADER
+===================================================== */
 
-    font-family:
-        "Orbitron",
-        sans-serif;
-
-}
-
-
-
-/* ========================= */
-/* MENU */
-/* ========================= */
-
-.topbar {
-
-    position: sticky;
+header {
+    position: fixed;
 
     top: 0;
+    left: 0;
 
-    z-index: 100;
+    width: 100%;
+
+    z-index: 1000;
 
     background:
-        rgba(4, 9, 58, .72);
+        rgba(3, 17, 39, 0.78);
 
-    backdrop-filter:
-        blur(22px);
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
 
     border-bottom:
         1px solid
-        rgba(255,255,255,.12);
+        rgba(74, 174, 255, 0.13);
 
+    transition:
+        background 0.3s ease;
 }
 
 
-nav {
-
-    height: 82px;
+.nav {
+    min-height: 76px;
 
     display: flex;
 
     align-items: center;
 
-    justify-content:
-        space-between;
+    justify-content: space-between;
 
     gap: 30px;
-
 }
 
 
-
-/* LOGO */
+/* =====================================================
+   LOGO DO MENU
+===================================================== */
 
 .brand {
-
     display: flex;
 
     align-items: center;
-
-    gap: 12px;
-
 }
 
 
-.logo-site {
+.brand img {
+    width: 155px;
 
-    width: 145px;
-
-    height: 58px;
+    height: 52px;
 
     object-fit: contain;
 
-    filter:
+    background: transparent;
 
-        drop-shadow(
-            0 0 15px
-            rgba(63, 219, 255, .28)
-        );
+    animation: none;
 
-    transition:
-        .25s;
-
+    transform: none;
 }
 
 
-.logo-site:hover {
+/* =====================================================
+   NAVEGAÇÃO
+===================================================== */
 
-    transform:
-        scale(1.04);
-
-}
-
-
-
-/* LINKS MENU */
-
-.navlinks {
-
+nav {
     display: flex;
 
     align-items: center;
 
-    gap: 28px;
-
+    gap: 32px;
 }
 
 
-.navlinks a {
-
+nav a {
     position: relative;
 
-    font-size: 16px;
+    color: #c3d6ec;
 
-    font-weight: 700;
+    font-weight: 600;
 
-    color:
-        rgba(255,255,255,.78);
+    font-size: 15px;
 
-    transition: .25s;
-
+    transition:
+        color 0.25s ease;
 }
 
 
-.navlinks a::after {
-
+nav a::after {
     content: "";
 
     position: absolute;
 
     left: 0;
-
-    bottom: -8px;
+    bottom: -7px;
 
     width: 0;
 
@@ -377,3733 +285,2722 @@ nav {
         linear-gradient(
             90deg,
             var(--cyan),
-            var(--purple-light)
+            var(--blue)
         );
 
-    border-radius: 99px;
-
     transition:
-        .25s;
-
+        width 0.25s ease;
 }
 
 
-.navlinks a:hover {
-
-    color: white;
-
+nav a:hover {
+    color: var(--cyan);
 }
 
 
-.navlinks a:hover::after {
-
+nav a:hover::after {
     width: 100%;
-
 }
-
 
 
 .nav-actions {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+
+/* =====================================================
+   BOTÕES
+===================================================== */
+
+.btn {
+    border: none;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    border-radius: 13px;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.btn svg {
+    width: 18px;
+
+    height: 18px;
+}
+
+
+.btn:hover {
+    transform:
+        translateY(-2px);
+}
+
+
+.btn-primary {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #078cff,
+            #235dff
+        );
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 119, 255, 0.30);
+}
+
+
+.btn-primary:hover {
+    box-shadow:
+        0 15px 45px
+        rgba(0, 174, 255, 0.40);
+}
+
+
+.btn-ghost {
+    color: white;
+
+    background:
+        rgba(31, 109, 181, 0.10);
+
+    border:
+        1px solid
+        rgba(91, 185, 255, 0.18);
+}
+
+
+.btn-ghost:hover {
+    background:
+        rgba(31, 138, 226, 0.14);
+
+    border-color:
+        rgba(32, 231, 255, 0.45);
+}
+
+
+/* =====================================================
+   TEXTOS PADRÃO
+===================================================== */
+
+.kicker {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: var(--cyan);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 17px;
+}
+
+
+.kicker svg {
+    width: 17px;
+}
+
+
+.section-title {
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            31px,
+            5vw,
+            50px
+        );
+
+    line-height: 1.08;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 20px;
+}
+
+
+.section-lead {
+    color: var(--muted);
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    max-width: 680px;
+}
+
+
+.highlight {
+    color: var(--cyan);
+
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   CARDS DE VIDRO
+===================================================== */
+
+.glass {
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(9, 51, 96, 0.74),
+            rgba(5, 29, 62, 0.67)
+        );
+
+    border:
+        1px solid
+        rgba(74, 174, 255, 0.18);
+
+    box-shadow:
+        var(--shadow);
+
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+}
+
+
+/* =====================================================
+   HERO / INÍCIO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    padding-top: 150px;
+
+    padding-bottom: 90px;
 
     display: flex;
 
     align-items: center;
 
-    gap: 10px;
-
+    overflow: hidden;
 }
 
 
+/* BRILHO AZUL */
 
-/* ========================= */
-/* BOTÕES */
-/* ========================= */
+.hero::before {
+    content: "";
 
-.btn {
+    position: absolute;
 
-    border: none;
+    width: 750px;
 
-    cursor: pointer;
+    height: 750px;
 
-    padding:
-        13px 20px;
+    right: -250px;
 
-    border-radius:
-        14px;
+    top: -20px;
 
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    gap: 9px;
-
-    font-size:
-        16px;
-
-    font-weight:
-        800;
-
-    transition:
-        .25s ease;
-
-}
-
-
-.btn svg {
-
-    width:
-        19px;
-
-}
-
-
-.btn:hover {
-
-    transform:
-        translateY(-3px);
-
-}
-
-
-.btn-primary {
-
-    color:
-        #081054;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #9cecff
-        );
-
-    box-shadow:
-
-        0 10px 32px
-        rgba(63, 215, 255, .23);
-
-}
-
-
-.btn-primary:hover {
-
-    box-shadow:
-
-        0 15px 42px
-        rgba(63, 215, 255, .35);
-
-}
-
-
-.btn-ghost {
-
-    color:
-        white;
-
-    background:
-        rgba(255,255,255,.06);
-
-    border:
-        1px solid
-        rgba(255,255,255,.17);
-
-}
-
-
-.btn-ghost:hover {
-
-    background:
-        rgba(255,255,255,.13);
-
-}
-
-
-
-/* ========================= */
-/* HERO */
-/* ========================= */
-
-.hero {
-
-    min-height:
-        calc(100vh - 82px);
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    padding:
-        80px 0;
-
-}
-
-
-.hero-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1.05fr .95fr;
-
-    align-items:
-        center;
-
-    gap:
-        70px;
-
-}
-
-
-
-/* ETIQUETAS */
-
-.kicker {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap:
-        9px;
-
-    padding:
-        8px 14px;
-
-    border-radius:
-        999px;
-
-    border:
-        1px solid
-        rgba(130, 235, 255, .42);
-
-    background:
-        rgba(69, 219, 255, .09);
-
-    color:
-        #bdf7ff;
-
-    font-size:
-        14px;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        .7px;
-
-    box-shadow:
-
-        inset
-        0 0 18px
-        rgba(76, 210, 255, .06);
-
-}
-
-
-
-.hero h1 {
-
-    font-size:
-
-        clamp(
-            46px,
-            6.5vw,
-            82px
-        );
-
-    line-height:
-        1.02;
-
-    letter-spacing:
-        -3px;
-
-    margin:
-        23px 0;
-
-}
-
-
-.hero h1 span {
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #ffffff,
-            #74e9ff,
-            #b786ff
-        );
-
-    background-clip:
-        text;
-
-    -webkit-background-clip:
-        text;
-
-    -webkit-text-fill-color:
-        transparent;
-
-}
-
-
-.hero-description {
-
-    max-width:
-        650px;
-
-    color:
-        #cdd7ff;
-
-    font-size:
-        21px;
-
-    line-height:
-        1.55;
-
-}
-
-
-.hero-buttons {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        13px;
-
-    margin-top:
-        30px;
-
-}
-
-
-
-/* ESTATÍSTICAS */
-
-.stats {
-
-    display:
-        flex;
-
-    gap:
-        18px;
-
-    flex-wrap:
-        wrap;
-
-    margin-top:
-        40px;
-
-}
-
-
-.stat {
-
-    padding:
-        15px 20px;
-
-    border-radius:
-        16px;
-
-    background:
-        rgba(255,255,255,.055);
-
-    border:
-        1px solid
-        rgba(255,255,255,.11);
-
-    min-width:
-        135px;
-
-}
-
-
-.stat strong {
-
-    display:
-        block;
-
-    font-family:
-        Orbitron;
-
-    font-size:
-        22px;
-
-    color:
-        var(--cyan-light);
-
-}
-
-
-.stat span {
-
-    font-size:
-        14px;
-
-    color:
-        #bfc9ec;
-
-}
-
-
-
-/* HERO LOGO */
-
-.hero-logo {
-
-    position:
-        relative;
-
-    min-height:
-        500px;
-
-    border-radius:
-        40px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.10),
-            rgba(255,255,255,.035)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    box-shadow:
-        var(--shadow);
-
-    backdrop-filter:
-        blur(18px);
-
-    overflow:
-        hidden;
-
-}
-
-
-.hero-logo::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        300px;
-
-    height:
-        300px;
-
-    border-radius:
-        50%;
+    border-radius: 50%;
 
     background:
 
         radial-gradient(
             circle,
-            rgba(56, 222, 255, .29),
+            rgba(0, 174, 255, 0.28),
+            rgba(0, 93, 255, 0.12) 35%,
             transparent 68%
         );
 
-    filter:
-        blur(10px);
+    filter: blur(20px);
 
+    pointer-events: none;
 }
 
 
-.hero-logo::after {
+/* BRILHO ESQUERDO */
 
-    content:
-        "";
+.hero::after {
+    content: "";
 
-    position:
-        absolute;
+    position: absolute;
 
-    width:
-        310px;
+    width: 450px;
 
-    height:
-        310px;
+    height: 450px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.15);
+    left: -250px;
 
-    border-radius:
-        55px;
+    bottom: -100px;
 
-    transform:
-        rotate(28deg);
+    border-radius: 50%;
 
-}
+    background:
 
-
-.hero-logo img {
-
-    width:
-        min(92%, 520px);
-
-    max-height:
-        420px;
-
-    object-fit:
-        contain;
-
-    z-index:
-        2;
-
-    position:
-        relative;
-
-    filter:
-
-        drop-shadow(
-            0 25px 45px
-            rgba(0,0,0,.35)
+        radial-gradient(
+            circle,
+            rgba(0, 119, 255, 0.20),
+            transparent 68%
         );
 
-    animation:
-        floating
-        5s ease-in-out
-        infinite;
+    filter: blur(30px);
 
+    pointer-events: none;
 }
 
 
-@keyframes floating {
+.hero-grid {
+    display: grid;
 
-    0%,
-    100% {
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(320px, 0.9fr);
 
-        transform:
-            translateY(0);
+    align-items: center;
 
-    }
+    gap: 70px;
 
-    50% {
+    position: relative;
 
-        transform:
-            translateY(-13px);
-
-    }
-
+    z-index: 2;
 }
 
 
-
-/* ========================= */
-/* TEXTOS DE SEÇÃO */
-/* ========================= */
-
-.section-header {
-
-    margin-bottom:
-        45px;
-
-}
-
-
-.section-title {
+.hero h1 {
+    font-family:
+        "Orbitron",
+        sans-serif;
 
     font-size:
-
         clamp(
-            34px,
-            4.5vw,
-            55px
+            48px,
+            7vw,
+            82px
         );
 
-    line-height:
-        1.12;
+    line-height: 0.98;
 
-    margin:
-        14px 0 14px;
+    letter-spacing: -3px;
 
+    max-width: 760px;
 }
 
 
-.section-description {
+.hero h1 span {
+    display: block;
 
-    max-width:
-        720px;
-
-    font-size:
-        19px;
-
-    color:
-        var(--text-soft);
-
-    line-height:
-        1.6;
-
-}
-
-
-
-/* ========================= */
-/* GLASS */
-/* ========================= */
-
-.glass {
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.105),
-            rgba(255,255,255,.045)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.14);
-
-    backdrop-filter:
-        blur(18px);
-
-    box-shadow:
-        var(--shadow);
-
-}
-
-
-
-/* ========================= */
-/* QUEM SOMOS */
-/* ========================= */
-
-.about-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        65px;
-
-    align-items:
-        center;
-
-}
-
-
-.content-card {
-
-    padding:
-        42px;
-
-    border-radius:
-        30px;
-
-}
-
-
-.content-card p {
-
-    font-size:
-        21px;
-
-    line-height:
-        1.7;
-
-    color:
-        #d7ddf9;
-
-}
-
-
-.highlight {
-
-    color:
-        #8ff1ff;
-
-    font-weight:
-        800;
-
-}
-
-
-.visual {
-
-    position:
-        relative;
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-}
-
-
-.visual::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        340px;
-
-    height:
-        340px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(96, 89, 255, .20);
-
-    filter:
-        blur(65px);
-
-}
-
-
-.visual img {
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
-    width:
-        100%;
-
-    max-height:
-        550px;
-
-    object-fit:
-        contain;
-
-    filter:
-
-        drop-shadow(
-            0 28px 45px
-            rgba(0,0,0,.25)
-        );
-
-}
-
-
-
-/* ========================= */
-/* QUALIDADE */
-/* ========================= */
-
-.quality-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        65px;
-
-    align-items:
-        center;
-
-}
-
-
-
-/* ========================= */
-/* CURSOS */
-/* ========================= */
-
-.course-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        22px;
-
-}
-
-
-.course-card {
-
-    position:
-        relative;
-
-    padding:
-        28px;
-
-    border-radius:
-        26px;
-
-    overflow:
-        hidden;
-
-    cursor:
-        pointer;
-
-    min-height:
-        315px;
-
-    transition:
-        .3s ease;
-
-}
-
-
-.course-card::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    right:
-        -80px;
-
-    bottom:
-        -100px;
-
-    width:
-        200px;
-
-    height:
-        200px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(53, 219, 255, .13);
-
-    transition:
-        .3s;
-
-}
-
-
-.course-card:hover {
-
-    transform:
-        translateY(-10px);
-
-    border-color:
-        rgba(125, 234, 255, .40);
-
-    background:
-        rgba(255,255,255,.12);
-
-}
-
-
-.course-card:hover::before {
-
-    transform:
-        scale(1.5);
-
-}
-
-
-.badge {
-
-    display:
-        inline-block;
-
-    padding:
-        6px 11px;
-
-    border-radius:
-        999px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.14);
-
-    background:
-        rgba(255,255,255,.08);
-
-    color:
-        #bff5ff;
-
-    font-size:
-        12px;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        .7px;
-
-}
-
-
-.course-icon {
-
-    width:
-        64px;
-
-    height:
-        64px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    border-radius:
-        19px;
-
-    margin:
-        28px 0 23px;
-
-    color:
-        #d8faff;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(72, 220, 255, .17),
-            rgba(139, 77, 255, .19)
-        );
-
-    border:
-        1px solid
-        rgba(152, 235, 255, .18);
-
-}
-
-
-.course-icon svg {
-
-    width:
-        30px;
-
-    height:
-        30px;
-
-}
-
-
-.course-card h3 {
-
-    font-size:
-        20px;
-
-    line-height:
-        1.35;
-
-    margin-bottom:
-        12px;
-
-}
-
-
-.course-card p {
-
-    color:
-        #c9d2ee;
-
-    line-height:
-        1.55;
-
-    font-size:
-        17px;
-
-}
-
-
-.course-more {
-
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    gap:
-        6px;
-
-    color:
-        #92efff;
-
-    margin-top:
-        20px;
-
-    font-weight:
-        700;
-
-}
-
-
-
-/* ========================= */
-/* REGRAS */
-/* ========================= */
-
-.rules {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        22px;
-
-}
-
-
-.rule {
-
-    padding:
-        34px 28px;
-
-    border-radius:
-        28px;
-
-    transition:
-        .3s;
-
-}
-
-
-.rule:hover {
-
-    transform:
-        translateY(-8px);
-
-}
-
-
-.rule-icon {
-
-    width:
-        75px;
-
-    height:
-        75px;
-
-    border-radius:
-        23px;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    margin-bottom:
-        24px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            rgba(48, 226, 255, .19),
-            rgba(159, 80, 255, .20)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.16);
-
-}
-
-
-.rule-icon svg {
-
-    width:
-        34px;
-
-    height:
-        34px;
-
-}
-
-
-.rule h3 {
-
-    font-size:
-        20px;
-
-    margin-bottom:
-        18px;
-
-}
-
-
-.rule p {
-
-    color:
-        #cfd6ef;
-
-    font-size:
-        17px;
-
-    line-height:
-        1.6;
-
-    margin-bottom:
-        15px;
-
-}
-
-
-.schedule {
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        10px;
-
-    margin-top:
-        20px;
-
-}
-
-
-.schedule-item {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        10px;
-
-    padding:
-        11px 13px;
-
-    border-radius:
-        12px;
-
-    background:
-        rgba(255,255,255,.06);
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-}
-
-
-.schedule-item strong {
-
-    color:
-        #baf6ff;
-
-}
-
-
-
-/* ========================= */
-/* ÁREA DO ALUNO */
-/* ========================= */
-
-.portal-wrapper {
-
-    padding:
-        45px;
-
-    border-radius:
-        34px;
-
-}
-
-
-.portal {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        .95fr 1.05fr;
-
-    gap:
-        65px;
-
-    align-items:
-        center;
-
-}
-
-
-.progress-container {
-
-    margin-top:
-        30px;
-
-}
-
-
-.progress-info {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    align-items:
-        center;
-
-    margin-bottom:
-        10px;
-
-    color:
-        #d5ddf7;
-
-}
-
-
-.progress-bar {
-
-    height:
-        11px;
-
-    border-radius:
-        999px;
-
-    overflow:
-        hidden;
-
-    background:
-        rgba(255,255,255,.08);
-
-}
-
-
-.progress-fill {
-
-    width:
-        64%;
-
-    height:
-        100%;
-
-    border-radius:
-        inherit;
+    color: transparent;
 
     background:
 
         linear-gradient(
             90deg,
-            #48e1ff,
-            #8058ff
+            #2be8ff,
+            #259aff,
+            #4f73ff
         );
 
-    box-shadow:
+    background-clip: text;
 
-        0 0 22px
-        rgba(64, 226, 255, .25);
-
+    -webkit-background-clip: text;
 }
 
 
+.hero p {
+    margin-top: 28px;
 
-.login-card {
+    max-width: 640px;
 
-    padding:
-        32px;
+    color: #bad0e8;
 
-    border-radius:
-        26px;
+    font-size: 20px;
+
+    line-height: 1.65;
+}
+
+
+.hero-actions {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 13px;
+
+    margin-top: 32px;
+}
+
+
+/* =====================================================
+   100% ONLINE
+===================================================== */
+
+.online-box {
+    margin-top: 38px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px 21px;
+
+    border-radius: 18px;
 
     background:
-        rgba(1, 8, 62, .24);
+
+        linear-gradient(
+            135deg,
+            rgba(8, 62, 115, 0.58),
+            rgba(9, 43, 91, 0.55)
+        );
 
     border:
         1px solid
-        rgba(255,255,255,.12);
+        rgba(32, 231, 255, 0.20);
 
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, 0.15);
 }
 
 
-.login-card h3 {
+.online-icon {
+    width: 46px;
 
-    margin-bottom:
-        25px;
+    height: 46px;
 
-}
+    border-radius: 13px;
 
+    display: grid;
 
-label {
+    place-items: center;
 
-    display:
-        block;
+    color: var(--cyan);
 
-    margin-bottom:
-        18px;
-
-    font-weight:
-        700;
-
-}
-
-
-.input-group {
-
-    position:
-        relative;
-
-    margin-top:
-        7px;
-
-}
-
-
-.input-group svg {
-
-    position:
-        absolute;
-
-    width:
-        19px;
-
-    left:
-        14px;
-
-    top:
-        50%;
-
-    transform:
-        translateY(-50%);
-
-    color:
-        #aab8ec;
-
-}
-
-
-.input {
-
-    width:
-        100%;
+    background:
+        rgba(32, 231, 255, 0.10);
 
     border:
         1px solid
-        rgba(255,255,255,.13);
+        rgba(32, 231, 255, 0.13);
+}
 
-    outline:
-        none;
 
-    border-radius:
-        13px;
+.online-icon svg {
+    width: 22px;
+}
 
-    padding:
-        14px 14px 14px 45px;
+
+.online-box strong {
+    display: block;
+
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 20px;
+
+    color: white;
+}
+
+
+.online-box span {
+    color: #9fc7e7;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   LOGO GRANDE DO INÍCIO
+===================================================== */
+
+.hero-logo {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 440px;
+}
+
+
+/* BRILHO ATRÁS DA LOGO */
+
+.hero-logo::before {
+    content: "";
+
+    position: absolute;
+
+    width: 430px;
+
+    height: 430px;
+
+    border-radius: 50%;
 
     background:
-        rgba(255,255,255,.055);
 
-    color:
-        white;
+        radial-gradient(
+            circle,
+            rgba(32, 231, 255, 0.20),
+            rgba(0, 119, 255, 0.12) 40%,
+            transparent 70%
+        );
 
-    font-size:
-        16px;
-
-    transition:
-        .25s;
-
+    filter: blur(18px);
 }
 
 
-.input:focus {
+/* IMPORTANTE:
+   SEM ANIMAÇÃO
+   SEM CARD PRETO
+   SEM SUBIR E DESCER
+*/
 
-    border-color:
-        rgba(93, 222, 255, .65);
+.hero-logo img {
+    position: relative;
 
-    background:
-        rgba(255,255,255,.09);
+    width:
+        min(
+            100%,
+            480px
+        );
 
-    box-shadow:
+    object-fit: contain;
 
-        0 0 0 3px
-        rgba(65, 221, 255, .08);
+    background: transparent;
 
+    animation: none !important;
+
+    transform: none !important;
+
+    filter:
+
+        drop-shadow(
+            0 0 30px
+            rgba(0, 174, 255, 0.25)
+        )
+
+        drop-shadow(
+            0 25px 40px
+            rgba(0, 0, 0, 0.15)
+        );
 }
 
 
-.input::placeholder {
+/* =====================================================
+   QUEM SOMOS
+===================================================== */
 
-    color:
-        rgba(220,225,255,.48);
-
-}
-
-
-
-/* ========================= */
-/* FINAL */
-/* ========================= */
-
-.final {
-
-    display:
-        grid;
+.about-grid,
+.quality-grid {
+    display: grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    align-items:
-        center;
+    gap: 70px;
 
-    gap:
-        60px;
-
+    align-items: center;
 }
 
 
-.final h2 {
+.panel {
+    border-radius:
+        var(--radius);
 
-    font-size:
+    padding: 46px;
+}
 
-        clamp(
-            43px,
-            6vw,
-            78px
+
+.panel p {
+    color: #bed0e5;
+
+    font-size: 19px;
+
+    line-height: 1.75;
+}
+
+
+/* =====================================================
+   IMAGENS
+===================================================== */
+
+.visual {
+    min-height: 440px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 390px;
+
+    height: 390px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(36, 209, 255, 0.19),
+            rgba(0, 119, 255, 0.09),
+            transparent 68%
         );
 
-    line-height:
-        1.03;
-
-    letter-spacing:
-        -2px;
-
+    filter: blur(20px);
 }
 
 
-.final p {
+.visual img {
+    position: relative;
 
-    font-size:
-        25px;
+    max-height: 430px;
 
-    color:
-        #d7defb;
-
-    letter-spacing:
-        1px;
-
-    margin:
-        18px 0 30px;
-
-}
-
-
-.final-image {
-
-    position:
-        relative;
-
-}
-
-
-.final-image::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        350px;
-
-    height:
-        350px;
-
-    border-radius:
-        50%;
-
-    background:
-        rgba(68, 219, 255, .17);
+    object-fit: contain;
 
     filter:
-        blur(65px);
 
+        drop-shadow(
+            0 25px 45px
+            rgba(0, 0, 0, 0.28)
+        )
+
+        drop-shadow(
+            0 0 25px
+            rgba(0, 153, 255, 0.12)
+        );
 }
 
 
-.final-image img {
+/* =====================================================
+   QUALIDADE
+===================================================== */
 
-    width:
-        100%;
+#qualidade {
+    background:
 
-    max-height:
-        520px;
-
-    object-fit:
-        contain;
-
-    position:
-        relative;
-
-    z-index:
-        2;
-
+        linear-gradient(
+            180deg,
+            rgba(2, 19, 43, 0),
+            rgba(6, 45, 88, 0.38),
+            rgba(2, 19, 43, 0)
+        );
 }
 
 
+.institutions {
+    display: flex;
 
-/* ========================= */
-/* FOOTER */
-/* ========================= */
+    flex-wrap: wrap;
 
-footer {
+    gap: 10px;
 
-    border-top:
+    margin-top: 25px;
+}
+
+
+.institution {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 9px 13px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(32, 231, 255, 0.07);
+
+    border:
         1px solid
-        rgba(255,255,255,.12);
+        rgba(32, 231, 255, 0.16);
 
-    padding:
-        30px 0;
+    color: #d0efff;
+
+    font-weight: 700;
+}
+
+
+.institution svg {
+    width: 15px;
+}
+
+
+.reference-note {
+    margin-top: 15px;
+
+    color: #7fa0bf !important;
+
+    font-size: 14px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* =====================================================
+   CURSOS
+===================================================== */
+
+#cursos {
+    position: relative;
+}
+
+
+.courses-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 42px;
+}
+
+
+.courses-heading .section-title {
+    margin-bottom: 10px;
+}
+
+
+.course-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.course-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 23px;
+
+    padding: 30px;
+
+    min-height: 330px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.course-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    border-radius: 50%;
+
+    right: -80px;
+
+    top: -80px;
 
     background:
-        rgba(3, 8, 55, .34);
+        rgba(36, 177, 255, 0.17);
 
+    filter: blur(25px);
 }
 
 
-.footer-row {
+.course-card:hover {
+    transform:
+        translateY(-7px);
 
-    display:
-        flex;
+    border-color:
+        rgba(32, 231, 255, 0.40);
 
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        20px;
-
+    box-shadow:
+        0 25px 70px
+        rgba(0, 65, 130, 0.25);
 }
 
 
-.footer-logo {
+.badge {
+    align-self: flex-start;
 
-    width:
-        125px;
+    color: var(--cyan);
 
-    height:
-        50px;
+    font-size: 11px;
 
-    object-fit:
-        contain;
+    font-weight: 700;
 
-}
+    letter-spacing: 1.3px;
 
+    padding: 6px 9px;
 
-footer p {
-
-    color:
-        #aab5d9;
-
-}
-
-
-
-/* ========================= */
-/* MODAL */
-/* ========================= */
-
-.modal {
-
-    position:
-        fixed;
-
-    inset:
-        0;
-
-    z-index:
-        500;
+    border-radius: 7px;
 
     background:
-        rgba(1, 4, 30, .78);
+        rgba(32, 231, 255, 0.08);
 
-    backdrop-filter:
-        blur(10px);
-
-    display:
-        none;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    padding:
-        20px;
-
+    border:
+        1px solid
+        rgba(32, 231, 255, 0.15);
 }
 
 
-.modal.open {
+.course-icon {
+    width: 64px;
 
-    display:
-        flex;
+    height: 64px;
 
-}
+    border-radius: 18px;
 
+    display: grid;
 
-.modal-content {
+    place-items: center;
 
-    width:
-        min(520px, 100%);
+    margin: 26px 0 20px;
 
-    padding:
-        32px;
-
-    border-radius:
-        27px;
+    color: var(--cyan);
 
     background:
 
         linear-gradient(
             145deg,
-            #101a82,
-            #311b92
+            rgba(32, 231, 255, 0.15),
+            rgba(0, 119, 255, 0.14)
         );
 
     border:
         1px solid
-        rgba(255,255,255,.17);
-
-    box-shadow:
-        0 30px 80px
-        rgba(0,0,0,.45);
-
+        rgba(32, 231, 255, 0.17);
 }
 
 
-.modal-header {
+.course-icon svg {
+    width: 30px;
 
-    display:
-        flex;
-
-    align-items:
-        flex-start;
-
-    justify-content:
-        space-between;
-
-    gap:
-        20px;
-
+    height: 30px;
 }
 
 
-.modal-header h3 {
+.course-card h3 {
+    font-family:
+        "Orbitron",
+        sans-serif;
 
-    font-size:
-        24px;
+    font-size: 20px;
 
+    line-height: 1.3;
+
+    margin-bottom: 13px;
 }
 
 
-.close {
+.course-card p {
+    color: var(--muted);
 
-    width:
-        40px;
+    line-height: 1.55;
 
-    height:
-        40px;
+    font-size: 16px;
+}
 
-    border-radius:
-        50%;
 
-    border:
-        1px solid
-        rgba(255,255,255,.13);
+.course-bottom {
+    margin-top: auto;
 
+    padding-top: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: #d1efff;
+
+    font-weight: 700;
+}
+
+
+.course-bottom svg {
+    width: 18px;
+}
+
+
+/* =====================================================
+   COMO FUNCIONA
+===================================================== */
+
+#como-funciona {
     background:
-        rgba(255,255,255,.08);
 
-    color:
-        white;
-
-    display:
-        grid;
-
-    place-items:
-        center;
-
-    cursor:
-        pointer;
-
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 140, 255, 0.13),
+            transparent 55%
+        );
 }
 
 
-.lesson {
+.rules {
+    display: grid;
 
-    display:
-        flex;
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    justify-content:
-        space-between;
+    gap: 20px;
 
-    align-items:
-        center;
-
-    gap:
-        15px;
-
-    padding:
-        15px 0;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.11);
-
+    margin-top: 45px;
 }
 
 
-.lesson small {
+.rule {
+    border-radius: 22px;
 
-    color:
-        #aeb9df;
+    padding: 31px;
 
-}
-
-
-
-/* ========================= */
-/* TOAST */
-/* ========================= */
-
-.toast {
-
-    position:
-        fixed;
-
-    z-index:
-        600;
-
-    right:
-        20px;
-
-    bottom:
-        20px;
-
-    padding:
-        14px 20px;
-
-    border-radius:
-        14px;
-
-    background:
-        #08105a;
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    box-shadow:
-        0 15px 40px
-        rgba(0,0,0,.32);
-
-    transform:
-        translateY(100px);
-
-    opacity:
-        0;
+    min-height: 370px;
 
     transition:
-        .3s;
-
+        transform 0.3s ease,
+        border-color 0.3s ease;
 }
 
 
-.toast.show {
+.rule:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(32, 231, 255, 0.32);
+}
+
+
+.round {
+    width: 58px;
+
+    height: 58px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    color: var(--cyan);
+
+    background:
+        rgba(32, 231, 255, 0.09);
+
+    border:
+        1px solid
+        rgba(32, 231, 255, 0.18);
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 0 25px
+        rgba(32, 231, 255, 0.08);
+}
+
+
+.round svg {
+    width: 25px;
+}
+
+
+.rule h3 {
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 17px;
+
+    margin-bottom: 17px;
+}
+
+
+.rule p {
+    color: #abc2db;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+}
+
+
+.rule strong {
+    color: white;
+}
+
+
+/* =====================================================
+   HORÁRIOS
+===================================================== */
+
+.schedule {
+    margin-top: 20px;
+
+    display: grid;
+
+    gap: 8px;
+}
+
+
+.schedule div {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(18, 104, 181, 0.12);
+
+    border:
+        1px solid
+        rgba(73, 166, 255, 0.08);
+}
+
+
+.schedule span {
+    color: #91aed0;
+}
+
+
+/* =====================================================
+   ETAPAS
+===================================================== */
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+
+.step {
+    padding: 24px;
+
+    border-radius: 19px;
+
+    border:
+        1px solid
+        rgba(77, 169, 255, 0.13);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(10, 54, 101, 0.44),
+            rgba(5, 31, 65, 0.42)
+        );
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.step:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(32, 231, 255, 0.30);
+}
+
+
+.step-number {
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size: 12px;
+
+    color: var(--cyan);
+
+    margin-bottom: 12px;
+}
+
+
+.step h4 {
+    font-size: 18px;
+
+    margin-bottom: 6px;
+}
+
+
+.step p {
+    color: #91abc5;
+
+    line-height: 1.45;
+}
+
+
+/* =====================================================
+   COMEÇAR AGORA
+===================================================== */
+
+#comecar {
+    padding-top: 80px;
+}
+
+
+.start-box {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 32px;
+
+    padding: 70px;
+
+    text-align: center;
+
+    border:
+        1px solid
+        rgba(32, 231, 255, 0.20);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(8, 59, 112, 0.94),
+            rgba(5, 35, 80, 0.94)
+        );
+
+    box-shadow:
+        0 30px 100px
+        rgba(0, 20, 60, 0.38);
+}
+
+
+.start-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    top: -310px;
+
+    left: 50%;
 
     transform:
-        translateY(0);
+        translateX(-50%);
 
-    opacity:
-        1;
+    background:
+        rgba(32, 231, 255, 0.19);
 
+    filter: blur(75px);
 }
 
 
+.start-box::after {
+    content: "";
 
-/* ========================= */
-/* RESPONSIVO */
-/* ========================= */
+    position: absolute;
 
-@media(max-width: 950px) {
+    width: 300px;
 
-    .navlinks {
+    height: 300px;
 
-        display:
-            none;
+    right: -170px;
 
+    bottom: -170px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0, 119, 255, 0.23);
+
+    filter: blur(50px);
+}
+
+
+.start-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.start-box h2 {
+    font-family:
+        "Orbitron",
+        sans-serif;
+
+    font-size:
+        clamp(
+            34px,
+            5vw,
+            57px
+        );
+
+    line-height: 1.05;
+
+    max-width: 780px;
+
+    margin:
+        0 auto 20px;
+}
+
+
+.start-box h2 span {
+    color: var(--cyan);
+}
+
+
+.start-box p {
+    color: #b4cbe1;
+
+    font-size: 19px;
+
+    max-width: 630px;
+
+    margin:
+        0 auto 30px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 35px 0;
+
+    border-top:
+        1px solid
+        rgba(74, 174, 255, 0.11);
+
+    background:
+        rgba(2, 13, 31, 0.72);
+}
+
+
+.footer-inner {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+.footer-logo {
+    width: 135px;
+
+    object-fit: contain;
+
+    background: transparent;
+}
+
+
+footer p {
+    color: #7392b2;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+.mobile-menu {
+    display: none;
+
+    width: 43px;
+
+    height: 43px;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 11px;
+
+    color: white;
+
+    background:
+        rgba(22, 112, 194, 0.12);
+
+    border:
+        1px solid
+        rgba(80, 175, 255, 0.15);
+}
+
+
+/* =====================================================
+   SELEÇÃO DE TEXTO
+===================================================== */
+
+::selection {
+    color: white;
+
+    background:
+        rgba(0, 153, 255, 0.65);
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+    background:
+        #031126;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+
+        linear-gradient(
+            var(--blue),
+            var(--cyan)
+        );
+
+    border-radius: 20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        var(--cyan);
+}
+
+
+/* =====================================================
+   RESPONSIVO - TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+    nav {
+        position: absolute;
+
+        top: 76px;
+
+        left: 20px;
+
+        right: 20px;
+
+        padding: 20px;
+
+        border-radius: 17px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        background:
+            rgba(3, 25, 56, 0.98);
+
+        border:
+            1px solid
+            rgba(78, 176, 255, 0.17);
+
+        box-shadow:
+            0 20px 60px
+            rgba(0, 0, 0, 0.30);
+
+        display: none;
+    }
+
+
+    nav.open {
+        display: flex;
+    }
+
+
+    .mobile-menu {
+        display: inline-flex;
+    }
+
+
+    .nav-actions .btn-ghost {
+        display: none;
     }
 
 
     .hero-grid,
     .about-grid,
-    .quality-grid,
-    .portal,
-    .final {
-
-        grid-template-columns:
-            1fr;
-
+    .quality-grid {
+        grid-template-columns: 1fr;
     }
 
 
     .hero {
-
-        text-align:
-            center;
-
-    }
-
-
-    .hero-description {
-
-        margin:
-            auto;
-
-    }
-
-
-    .hero-buttons,
-    .stats {
-
-        justify-content:
-            center;
-
+        padding-top: 130px;
     }
 
 
     .hero-logo {
+        min-height: auto;
+    }
 
-        min-height:
-            400px;
 
+    .hero-logo img {
+        width: 380px;
+    }
+
+
+    .quality-grid .visual {
+        order: 2;
     }
 
 
     .course-grid,
     .rules {
-
         grid-template-columns:
-            repeat(2, 1fr);
+            1fr 1fr;
+    }
 
+
+    .steps {
+        grid-template-columns:
+            1fr 1fr;
     }
 
 }
 
 
+/* =====================================================
+   RESPONSIVO - CELULAR
+===================================================== */
 
-@media(max-width: 650px) {
+@media (max-width: 650px) {
 
     .container {
-
         width:
             min(
-                100% - 24px,
+                100% - 28px,
                 1180px
             );
-
     }
 
 
     section {
-
         padding:
-            70px 0;
-
+            80px 0;
     }
 
 
-    .nav-actions
-    .btn-ghost {
-
-        display:
-            none;
-
+    .brand img {
+        width: 125px;
     }
 
 
-    .logo-site {
+    .nav-actions .btn-primary {
+        display: none;
+    }
 
-        width:
-            120px;
 
+    .hero {
+        text-align: center;
+
+        min-height: auto;
+
+        padding-top: 130px;
+    }
+
+
+    .hero-grid {
+        gap: 40px;
     }
 
 
     .hero h1 {
-
         font-size:
-            43px;
+            clamp(
+                42px,
+                13vw,
+                60px
+            );
 
+        letter-spacing: -2px;
     }
 
 
-    .hero-description {
+    .hero p {
+        font-size: 18px;
 
-        font-size:
-            18px;
+        margin-left: auto;
 
+        margin-right: auto;
+    }
+
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+
+    .online-box {
+        text-align: left;
     }
 
 
     .hero-logo {
+        min-height: 280px;
+    }
 
-        min-height:
-            300px;
 
+    .hero-logo img {
+        width: 290px;
+    }
+
+
+    .hero-logo::before {
+        width: 300px;
+
+        height: 300px;
+    }
+
+
+    .panel {
+        padding: 29px;
+    }
+
+
+    .visual {
+        min-height: 310px;
+    }
+
+
+    .visual img {
+        max-height: 310px;
     }
 
 
     .course-grid,
-    .rules {
-
+    .rules,
+    .steps {
         grid-template-columns:
             1fr;
-
     }
 
 
-    .content-card,
-    .portal-wrapper {
+    .courses-heading {
+        display: block;
+    }
 
+
+    .start-box {
         padding:
-            25px;
-
+            50px 25px;
     }
 
 
-    .footer-row {
+    .footer-inner {
+        flex-direction: column;
 
-        flex-direction:
-            column;
-
-        text-align:
-            center;
-
+        text-align: center;
     }
 
 }
 
-</style>
 
+/* =====================================================
+   CELULARES PEQUENOS
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+
+    .online-box {
+        width: 100%;
+    }
+
+
+    .section-title {
+        font-size: 31px;
+    }
+
+
+    .panel {
+        padding: 23px;
+    }
+
+
+    .course-card,
+    .rule {
+        padding: 24px;
+    }
+
+}
+    </style>
 </head>
 
 
 <body>
 
 
-<!-- ========================= -->
-<!-- MENU -->
-<!-- ========================= -->
+<!-- =====================================================
+     MENU
+===================================================== -->
 
-<header class="topbar">
+<header>
 
-<div class="container">
+    <div class="container nav">
 
-<nav>
+        <a href="#inicio" class="brand">
 
+            <img
+                src="assets/logo-tecbrasil.png"
+                alt="TecBrasil Escola Técnica Online">
 
-<a href="#inicio"
-class="brand">
-
-<img
-src="assets/logo-tecbrasil.png"
-alt="TecBrasil"
-class="logo-site">
-
-</a>
+        </a>
 
 
-<div class="navlinks">
+        <nav id="navMenu">
 
-<a href="#sobre">
-Quem somos
-</a>
+            <a href="#sobre">
+                Quem somos
+            </a>
 
-<a href="#qualidade">
-Qualidade
-</a>
+            <a href="#qualidade">
+                Qualidade
+            </a>
 
-<a href="#cursos">
-Cursos
-</a>
+            <a href="#cursos">
+                Cursos
+            </a>
 
-<a href="#regras">
-Como funciona
-</a>
+            <a href="#como-funciona">
+                Como funciona
+            </a>
 
-</div>
-
-
-<div class="nav-actions">
+        </nav>
 
 
-<button
-class="btn btn-ghost"
-id="loginOpen">
+        <div class="nav-actions">
 
-<i data-lucide="user"></i>
+            <button
+                class="btn btn-ghost"
+                onclick="alert('Área do aluno será implementada em breve.')">
 
-Entrar
+                <i data-lucide="user"></i>
 
-</button>
+                Entrar
 
+            </button>
 
-<a
-href="#cursos"
-class="btn btn-primary">
+            <a
+                href="#comecar"
+                class="btn btn-primary">
 
-<i data-lucide="rocket"></i>
+                Começar
 
-Começar
+                <i data-lucide="arrow-right"></i>
 
-</a>
-
-
-</div>
+            </a>
 
 
-</nav>
+            <button
+                class="mobile-menu"
+                onclick="toggleMenu()"
+                aria-label="Abrir menu">
 
-</div>
+                <i data-lucide="menu"></i>
+
+            </button>
+
+        </div>
+
+    </div>
 
 </header>
 
 
 
-<main>
-
-
-
-<!-- ========================= -->
-<!-- INÍCIO -->
-<!-- ========================= -->
+<!-- =====================================================
+     INÍCIO
+===================================================== -->
 
 <section
-class="hero"
-id="inicio">
+    class="hero"
+    id="inicio">
 
+    <div class="container hero-grid">
 
-<div
-class="container hero-grid">
 
+        <div>
 
-<div>
+            <div class="kicker">
 
+                <i data-lucide="cpu"></i>
 
-<div class="kicker">
+                Escola Técnica Online
 
-<i data-lucide="cpu"></i>
+            </div>
 
-ESCOLA TÉCNICA ONLINE
 
-</div>
+            <h1>
 
+                Seu futuro
 
-<h1>
+                <span>
+                    começa aqui.
+                </span>
 
-Seu futuro
+            </h1>
 
-<span>
-começa aqui.
-</span>
 
-</h1>
+            <p>
 
+                Aprenda tecnologia de onde estiver
+                através de uma plataforma criada
+                para aproximar você do conhecimento
+                e preparar novas habilidades para
+                o futuro.
 
-<p
-class="hero-description">
+            </p>
 
-A TecBrasil é uma plataforma
-de cursos profissionalizantes
-100% online criada para levar
-conhecimento sobre tecnologia
-até você, sem precisar sair
-de casa.
 
-</p>
+            <div class="hero-actions">
 
+                <a
+                    href="#cursos"
+                    class="btn btn-primary">
 
-<div class="hero-buttons">
+                    <i data-lucide="book-open"></i>
 
+                    Conhecer cursos
 
-<a
-href="#cursos"
-class="btn btn-primary">
+                </a>
 
-<i data-lucide="book-open"></i>
 
-Explorar cursos
+                <a
+                    href="#sobre"
+                    class="btn btn-ghost">
 
-</a>
+                    Conheça a TecBrasil
 
+                    <i data-lucide="arrow-down"></i>
 
-<a
-href="#sobre"
-class="btn btn-ghost">
+                </a>
 
-<i data-lucide="circle-help"></i>
+            </div>
 
-Conheça a TecBrasil
 
-</a>
+            <!--
+                NO INÍCIO DEIXAMOS APENAS O
+                PRINCIPAL DIFERENCIAL:
+                100% ONLINE
+            -->
 
+            <div class="online-box">
 
-</div>
+                <div class="online-icon">
 
+                    <i data-lucide="wifi"></i>
 
+                </div>
 
-<div class="stats">
+                <div>
 
+                    <strong>
+                        100% ONLINE
+                    </strong>
 
-<div class="stat">
+                    <span>
+                        Estude tecnologia de onde estiver
+                    </span>
 
-<strong>
-100%
-</strong>
+                </div>
 
-<span>
-Online
-</span>
+            </div>
 
-</div>
+        </div>
 
 
-<div class="stat">
 
-<strong>
-3
-</strong>
+        <!--
+            LOGO SEM CARD PRETO
+            E SEM ANIMAÇÃO
+        -->
 
-<span>
-Horários disponíveis
-</span>
+        <div class="hero-logo">
 
-</div>
+            <img
+                src="assets/logo-tecbrasil.png"
+                alt="TecBrasil - Escola Técnica Online">
 
+        </div>
 
-<div class="stat">
 
-<strong>
-85%
-</strong>
-
-<span>
-Presença mínima
-</span>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<div class="hero-logo">
-
-
-<img
-src="assets/logo-tecbrasil.png"
-alt="Logo da TecBrasil">
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
 
 
 
-<!-- ========================= -->
-<!-- QUEM SOMOS -->
-<!-- ========================= -->
+<!-- =====================================================
+     QUEM SOMOS
+===================================================== -->
 
-<section
-id="sobre">
+<section id="sobre">
 
-
-<div
-class="container about-grid">
+    <div class="container about-grid">
 
 
-<div
-class="content-card glass">
+        <div class="panel glass">
+
+            <div class="kicker">
+
+                <i data-lucide="bot"></i>
+
+                QUEM NÓS SOMOS?
+
+            </div>
 
 
-<div class="kicker">
+            <h2 class="section-title">
 
-<i data-lucide="bot"></i>
+                Somos a
+                TecBrasil.
 
-QUEM NÓS SOMOS?
-
-</div>
-
-
-<h2
-class="section-title">
-
-Somos a
-TecBrasil.
-
-</h2>
+            </h2>
 
 
-<p>
+            <p>
 
-Somos a TecBrasil,
-um grupo buscando criar
-um site de cursos
-profissionalizantes
+                Somos a TecBrasil, um grupo
+                buscando criar uma plataforma
+                de cursos profissionalizantes
 
-<span class="highlight">
+                <span class="highlight">
+                    100% online.
+                </span>
 
-100% online!
+                <br><br>
 
-</span>
+                Nosso objetivo é proporcionar
+                a oportunidade de aprender
+                sobre o mundo da tecnologia
+                sem precisar sair de casa.
 
-Para que você possa ter
-a oportunidade de aprender
-tudo sobre o mundo da
-tecnologia sem precisar
-sair de casa!
+                <br><br>
 
-</p>
+                Queremos tornar o aprendizado
+                tecnológico mais acessível,
+                organizado e conectado com
+                as habilidades necessárias
+                para o futuro.
 
+            </p>
 
-</div>
+        </div>
 
 
 
-<div class="visual">
+        <div class="visual">
+
+            <img
+                src="assets/robo-livro.png"
+                alt="Robô TecBrasil estudando">
+
+        </div>
 
 
-<img
-src="assets/robo-livro.png"
-alt="Robô TecBrasil lendo livro">
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
 
 
 
-<!-- ========================= -->
-<!-- QUALIDADE -->
-<!-- ========================= -->
+<!-- =====================================================
+     QUALIDADE DE ENSINO
+===================================================== -->
 
-<section
-id="qualidade">
+<section id="qualidade">
 
-
-<div
-class="container quality-grid">
+    <div class="container quality-grid">
 
 
-<div class="visual">
+        <div class="visual">
 
-<img
-src="assets/notebook-robo.png"
-alt="Notebook tecnológico">
+            <img
+                src="assets/notebook-robo.png"
+                alt="Tecnologia e educação TecBrasil">
 
-</div>
+        </div>
 
 
 
-<div
-class="content-card glass">
+        <div class="panel glass">
+
+            <div class="kicker">
+
+                <i data-lucide="award"></i>
+
+                ENSINO
+
+            </div>
 
 
-<div class="kicker">
+            <h2 class="section-title">
 
-<i data-lucide="award"></i>
+                Qualidade
+                de ensino.
 
-QUALIDADE DE ENSINO
-
-</div>
-
-
-<h2
-class="section-title">
-
-Tecnologia e
-conhecimento.
-
-</h2>
+            </h2>
 
 
-<p>
+            <p>
 
-O curso foi desenvolvido
-com base nos conhecimentos
-de um professor renomado,
-ligado a uma das maiores
-faculdades de desenvolvimento
-de sistemas do mundo:
+                A proposta de ensino da TecBrasil
+                utiliza conhecimentos da área
+                de tecnologia e desenvolvimento
+                de sistemas para construir uma
+                experiência de aprendizado clara
+                e prática.
 
-<span class="highlight">
+                <br><br>
 
-Instituto de Tecnologia
-de Massachusetts.
+                O conteúdo busca utilizar como
+                referência materiais, conceitos
+                e conhecimentos presentes no
+                ambiente acadêmico e tecnológico
+                brasileiro.
 
-</span>
+                <br><br>
 
-<br><br>
+                Os conteúdos são voltados para
+                áreas como
 
-Os professores dos cursos
-possuem formação em áreas
-como Desenvolvimento
-de Sistemas e Tecnologia
-da Informação.
+                <span class="highlight">
+                    Desenvolvimento de Sistemas,
+                    Tecnologia da Informação
+                    e desenvolvimento web.
+                </span>
 
-</p>
-
-
-</div>
+            </p>
 
 
-</div>
+            <div class="institutions">
 
+                <div class="institution">
+
+                    <i data-lucide="landmark"></i>
+
+                    USP
+
+                </div>
+
+
+                <div class="institution">
+
+                    <i data-lucide="graduation-cap"></i>
+
+                    FIAP
+
+                </div>
+
+
+                <div class="institution">
+
+                    <i data-lucide="book-open-check"></i>
+
+                    Referências brasileiras
+
+                </div>
+
+            </div>
+
+
+            <p class="reference-note">
+
+                As instituições apresentadas são
+                referências acadêmicas e educacionais.
+                Isso não representa parceria ou vínculo
+                institucional com a TecBrasil.
+
+            </p>
+
+        </div>
+
+
+    </div>
 
 </section>
 
 
 
-<!-- ========================= -->
-<!-- CURSOS -->
-<!-- ========================= -->
+<!-- =====================================================
+     CURSOS
+===================================================== -->
 
-<section
-id="cursos">
+<section id="cursos">
 
+    <div class="container">
 
-<div class="container">
 
+        <div class="courses-heading">
 
-<div class="section-header">
+            <div>
 
+                <div class="kicker">
 
-<div class="kicker">
+                    <i data-lucide="layers-3"></i>
 
-<i data-lucide="layers-3"></i>
+                    CURSOS
 
-CURSOS
+                </div>
 
-</div>
 
+                <h2 class="section-title">
 
-<h2
-class="section-title">
+                    Escolha sua
+                    próxima habilidade.
 
-Escolha sua
-próxima habilidade.
+                </h2>
 
-</h2>
 
+                <p class="section-lead">
 
-<p
-class="section-description">
+                    Conheça os cursos disponíveis
+                    atualmente na TecBrasil.
+                    Novas formações poderão ser
+                    adicionadas à plataforma.
 
-Aprenda tecnologia através
-de cursos profissionalizantes
-e acompanhe seu progresso
-diretamente na plataforma.
+                </p>
 
-</p>
+            </div>
 
+        </div>
 
-</div>
 
 
+        <div class="course-grid">
 
-<div
-class="course-grid">
 
+            <!-- CURSO 1 -->
 
+            <article class="course-card glass">
 
-<article
-class="course-card glass"
-data-course="Desenvolvimento de Sistemas">
+                <span class="badge">
+                    PROFISSIONALIZANTE
+                </span>
 
 
-<span class="badge">
+                <div class="course-icon">
 
-PROFISSIONALIZANTE
+                    <i data-lucide="code-2"></i>
 
-</span>
+                </div>
 
 
-<div class="course-icon">
+                <h3>
 
-<i data-lucide="code-2"></i>
+                    Desenvolvimento
+                    de Sistemas
 
-</div>
+                </h3>
 
 
-<h3>
+                <p>
 
-Desenvolvimento
-de Sistemas
+                    Aprenda lógica,
+                    programação,
+                    estruturas de sistemas
+                    e conceitos de
+                    desenvolvimento.
 
-</h3>
+                </p>
 
 
-<p>
+                <div class="course-bottom">
 
-Aprenda lógica,
-programação,
-estrutura de sistemas
-e fundamentos de
-desenvolvimento.
+                    Ver curso
 
-</p>
+                    <i data-lucide="arrow-up-right"></i>
 
+                </div>
 
-<span class="course-more">
+            </article>
 
-Ver curso
 
-<i data-lucide="arrow-right"></i>
 
-</span>
+            <!-- CURSO 2 -->
 
+            <article class="course-card glass">
 
-</article>
+                <span class="badge">
+                    TECNOLOGIA
+                </span>
 
 
+                <div class="course-icon">
 
-<article
-class="course-card glass"
-data-course="Tecnologia da Informação">
+                    <i data-lucide="monitor-cog"></i>
 
+                </div>
 
-<span class="badge">
 
-TECNOLOGIA
+                <h3>
 
-</span>
+                    Tecnologia
+                    da Informação
 
+                </h3>
 
-<div class="course-icon">
 
-<i data-lucide="monitor-cog"></i>
+                <p>
 
-</div>
+                    Fundamentos de TI,
+                    computadores,
+                    sistemas e ferramentas
+                    utilizadas no ambiente
+                    tecnológico.
 
+                </p>
 
-<h3>
 
-Tecnologia
-da Informação
+                <div class="course-bottom">
 
-</h3>
+                    Ver curso
 
+                    <i data-lucide="arrow-up-right"></i>
 
-<p>
+                </div>
 
-Conheça computadores,
-sistemas, redes,
-ferramentas digitais
-e fundamentos de TI.
+            </article>
 
-</p>
 
 
-<span class="course-more">
+            <!-- CURSO 3 -->
 
-Ver curso
+            <article class="course-card glass">
 
-<i data-lucide="arrow-right"></i>
+                <span class="badge">
+                    DESENVOLVIMENTO
+                </span>
 
-</span>
 
+                <div class="course-icon">
 
-</article>
+                    <i data-lucide="globe-2"></i>
 
+                </div>
 
 
-<article
-class="course-card glass"
-data-course="Fundamentos Web">
+                <h3>
 
+                    Fundamentos
+                    Web
 
-<span class="badge">
+                </h3>
 
-DESENVOLVIMENTO WEB
 
-</span>
+                <p>
 
+                    Introdução ao universo
+                    dos sites e às principais
+                    tecnologias utilizadas
+                    no desenvolvimento web.
 
-<div class="course-icon">
+                </p>
 
-<i data-lucide="globe-2"></i>
 
-</div>
+                <div class="course-bottom">
 
+                    Ver curso
 
-<h3>
+                    <i data-lucide="arrow-up-right"></i>
 
-Fundamentos
-Web
+                </div>
 
-</h3>
+            </article>
 
 
-<p>
+        </div>
 
-Aprenda os conceitos
-iniciais de sites,
-HTML, CSS e tecnologias
-usadas na internet.
-
-</p>
-
-
-<span class="course-more">
-
-Ver curso
-
-<i data-lucide="arrow-right"></i>
-
-</span>
-
-
-</article>
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
 
 
 
-<!-- ========================= -->
-<!-- REGRAS -->
-<!-- ========================= -->
+<!-- =====================================================
+     COMO FUNCIONA A TECBRASIL
+===================================================== -->
 
-<section
-id="regras">
+<section id="como-funciona">
 
+    <div class="container">
 
-<div class="container">
 
+        <div class="kicker">
 
-<div class="section-header">
+            <i data-lucide="route"></i>
 
+            COMO FUNCIONA
 
-<div class="kicker">
+        </div>
 
-<i data-lucide="circle-check-big"></i>
 
-CONCLUSÃO DO CURSO
+        <h2 class="section-title">
 
-</div>
+            Como funciona
+            a TecBrasil?
 
+        </h2>
 
-<h2
-class="section-title">
 
-Como funciona
-a TecBrasil?
+        <p class="section-lead">
 
-</h2>
+            Aqui estão as informações importantes
+            sobre as aulas, presença e os requisitos
+            para concluir um curso e receber
+            o certificado.
 
+        </p>
 
-<p
-class="section-description">
 
-Confira os horários,
-regras de presença
-e o processo necessário
-para concluir o curso.
 
-</p>
+        <div class="rules">
 
 
-</div>
+            <!-- AULAS -->
 
+            <div class="rule glass">
 
+                <div class="round">
 
-<div class="rules">
+                    <i data-lucide="video"></i>
 
+                </div>
 
 
-<!-- AULAS -->
+                <h3>
+                    AULAS
+                </h3>
 
-<div
-class="rule glass">
 
+                <p>
 
-<div class="rule-icon">
+                    As aulas poderão acontecer
+                    através de chamadas de vídeo
+                    em três períodos diferentes.
 
-<i data-lucide="video"></i>
+                </p>
 
-</div>
 
+                <div class="schedule">
 
-<h3>
+                    <div>
 
-Aulas
+                        <strong>
+                            06:00 — 11:50
+                        </strong>
 
-</h3>
+                        <span>
+                            Manhã
+                        </span>
 
+                    </div>
 
-<p>
 
-Teremos três horários
-de aula em chamada
-de vídeo.
+                    <div>
 
-Escolha o período
-que melhor combina
-com sua rotina.
+                        <strong>
+                            13:00 — 17:50
+                        </strong>
 
-</p>
+                        <span>
+                            Tarde
+                        </span>
 
+                    </div>
 
-<div class="schedule">
 
+                    <div>
 
-<div class="schedule-item">
+                        <strong>
+                            18:00 — 23:50
+                        </strong>
 
-<strong>
-06:00 — 11:50
-</strong>
+                        <span>
+                            Noite
+                        </span>
 
-<span>
-Manhã
-</span>
+                    </div>
 
-</div>
+                </div>
 
+            </div>
 
-<div class="schedule-item">
 
-<strong>
-13:00 — 17:50
-</strong>
 
-<span>
-Tarde
-</span>
+            <!-- PRESENÇA -->
 
-</div>
+            <div class="rule glass">
 
+                <div class="round">
 
-<div class="schedule-item">
+                    <i data-lucide="user-check"></i>
 
-<strong>
-18:00 — 23:50
-</strong>
+                </div>
 
-<span>
-Noite
-</span>
 
-</div>
+                <h3>
+                    PRESENÇA
+                </h3>
 
 
-</div>
+                <p>
 
+                    Para concluir o curso,
+                    o aluno deverá estar presente
+                    em pelo menos
 
-</div>
+                    <span class="highlight">
+                        85% das aulas.
+                    </span>
 
+                    <br><br>
 
+                    O objetivo é evitar faltas
+                    desnecessárias e garantir
+                    o acompanhamento do conteúdo.
 
-<!-- PRESENÇA -->
+                    <br><br>
 
-<div
-class="rule glass">
+                    Em caso de emergência,
+                    o aluno poderá comunicar
+                    os professores ou entrar
+                    em contato com o suporte.
 
+                </p>
 
-<div class="rule-icon">
+            </div>
 
-<i data-lucide="user-check"></i>
 
-</div>
 
+            <!-- CERTIFICADO -->
 
-<h3>
+            <div class="rule glass">
 
-Presença
+                <div class="round">
 
-</h3>
+                    <i data-lucide="graduation-cap"></i>
 
+                </div>
 
-<p>
 
-É obrigatório que o
-aluno esteja presente
-em pelo menos
+                <h3>
+                    CONCLUSÃO E CERTIFICADO
+                </h3>
 
-<span class="highlight">
 
-85% das aulas.
+                <p>
 
-</span>
+                    Para receber o certificado,
+                    será necessário realizar
+                    uma
 
-</p>
+                    <span class="highlight">
+                        prova diagnóstica.
+                    </span>
 
+                    <br><br>
 
-<p>
+                    Depois, o aluno deverá
+                    explicar seu processo
+                    detalhadamente através
+                    de uma
 
-Em caso de emergência,
-é recomendado avisar
-os professores ou
-entrar em contato
-com o suporte.
+                    <span class="highlight">
+                        vídeo aula de até
+                        45 minutos.
+                    </span>
 
-</p>
+                    <br><br>
 
+                    Caso seja identificada
+                    alguma forma de trapaça,
+                    o aluno poderá ser
+                    desclassificado.
 
-</div>
+                </p>
 
+            </div>
 
 
-<!-- CERTIFICADO -->
+        </div>
 
-<div
-class="rule glass">
 
 
-<div class="rule-icon">
+        <!-- FLUXO RESUMIDO -->
 
-<i data-lucide="graduation-cap"></i>
+        <div class="steps">
 
-</div>
 
+            <div class="step">
 
-<h3>
+                <div class="step-number">
+                    ETAPA 01
+                </div>
 
-Certificado
+                <h4>
+                    Escolha o curso
+                </h4>
 
-</h3>
+                <p>
+                    Encontre a formação
+                    que deseja estudar.
+                </p>
 
+            </div>
 
-<p>
 
-Para conseguir
-o certificado,
-será necessário realizar
-uma prova diagnóstica.
+            <div class="step">
 
-</p>
+                <div class="step-number">
+                    ETAPA 02
+                </div>
 
+                <h4>
+                    Acompanhe as aulas
+                </h4>
 
-<p>
+                <p>
+                    Estude os conteúdos
+                    e participe das aulas.
+                </p>
 
-Depois, o aluno deverá
-explicar passo a passo
-o conteúdo em uma
+            </div>
 
-<span class="highlight">
 
-vídeo aula de até
-45 minutos.
+            <div class="step">
 
-</span>
+                <div class="step-number">
+                    ETAPA 03
+                </div>
 
-</p>
+                <h4>
+                    Faça a avaliação
+                </h4>
 
+                <p>
+                    Demonstre o conhecimento
+                    adquirido durante o curso.
+                </p>
 
-<p>
+            </div>
 
-Caso seja identificada
-alguma trapaça,
-o aluno será
-desclassificado.
 
-</p>
+            <div class="step">
 
+                <div class="step-number">
+                    ETAPA 04
+                </div>
 
-</div>
+                <h4>
+                    Conclua o curso
+                </h4>
 
+                <p>
+                    Complete os requisitos
+                    para obter seu certificado.
+                </p>
 
-</div>
+            </div>
 
 
-</div>
+        </div>
 
+
+    </div>
 
 </section>
 
 
 
-<!-- ========================= -->
-<!-- ÁREA DO ALUNO -->
-<!-- ========================= -->
+<!-- =====================================================
+     COMEÇAR AGORA
+===================================================== -->
 
-<section
-id="aluno">
+<section id="comecar">
 
+    <div class="container">
 
-<div
-class="container">
+        <div class="start-box">
 
+            <div class="start-content">
 
-<div
-class="portal-wrapper glass">
 
+                <div class="kicker">
 
-<div
-class="portal">
+                    <i data-lucide="rocket"></i>
 
+                    TECBRASIL
 
+                </div>
 
-<div>
 
+                <h2>
 
-<div class="kicker">
+                    O seu futuro
+                    <span>começa aqui.</span>
 
-<i data-lucide="layout-dashboard"></i>
+                </h2>
 
-ÁREA DO ALUNO
 
-</div>
+                <p>
 
+                    A plataforma TecBrasil está
+                    sendo construída para transformar
+                    conhecimento em oportunidade
+                    através da tecnologia.
 
-<h2
-class="section-title">
+                </p>
 
-Seu aprendizado
-em um só lugar.
 
-</h2>
+                <!--
+                    ESSE BOTÃO FICA PRONTO
+                    PARA VOCÊ IMPLEMENTAR AMANHÃ
+                -->
 
+                <button
+                    class="btn btn-primary"
+                    onclick="comecarAgora()">
 
-<p
-class="section-description">
+                    <i data-lucide="rocket"></i>
 
-Acompanhe suas aulas,
-frequência,
-atividades e
-progresso do curso.
+                    Começar agora
 
-</p>
+                </button>
 
 
+            </div>
 
-<div
-class="progress-container">
+        </div>
 
-
-<div
-class="progress-info">
-
-<strong>
-
-Progresso atual
-
-</strong>
-
-<span>
-
-64%
-
-</span>
-
-</div>
-
-
-<div
-class="progress-bar">
-
-
-<div
-class="progress-fill">
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-
-<div
-class="login-card">
-
-
-<h3>
-
-Entrar na plataforma
-
-</h3>
-
-
-<label>
-
-E-mail
-
-
-<div
-class="input-group">
-
-<i data-lucide="mail"></i>
-
-<input
-
-class="input"
-
-type="email"
-
-placeholder="aluno@tecbrasil.com">
-
-</div>
-
-
-</label>
-
-
-
-<label>
-
-Senha
-
-
-<div
-class="input-group">
-
-<i data-lucide="lock"></i>
-
-<input
-
-class="input"
-
-type="password"
-
-placeholder="••••••••">
-
-</div>
-
-
-</label>
-
-
-
-<button
-class="btn btn-primary"
-id="portalLogin"
-style="width:100%">
-
-
-<i data-lucide="log-in"></i>
-
-Entrar
-
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
 
 
 
-<!-- ========================= -->
-<!-- FINAL -->
-<!-- ========================= -->
-
-<section>
-
-
-<div
-class="container final">
-
-
-<div>
-
-
-<div class="kicker">
-
-<i data-lucide="sparkles"></i>
-
-TECBRASIL
-
-</div>
-
-
-<h2>
-
-ESSA É A
-
-<br>
-
-TECBRASIL
-
-</h2>
-
-
-<p>
-
-O SEU FUTURO,
-COMEÇA AQUI!
-
-</p>
-
-
-<a
-href="#cursos"
-class="btn btn-primary">
-
-<i data-lucide="rocket"></i>
-
-Começar agora
-
-</a>
-
-
-</div>
-
-
-
-<div class="final-image">
-
-
-<img
-src="assets/robo-cubo.png"
-alt="Robô TecBrasil">
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-</main>
-
-
-
-<!-- ========================= -->
-<!-- RODAPÉ -->
-<!-- ========================= -->
+<!-- =====================================================
+     RODAPÉ
+===================================================== -->
 
 <footer>
 
-
-<div
-class="container footer-row">
+    <div class="container footer-inner">
 
 
-<img
-src="assets/logo-tecbrasil.png"
-alt="TecBrasil"
-class="footer-logo">
+        <img
+            class="footer-logo"
+            src="assets/logo-tecbrasil.png"
+            alt="TecBrasil">
 
 
-<p>
+        <p>
 
-Escola Técnica Online
-•
-Seu futuro começa aqui.
+            © 2026 TecBrasil —
+            Escola Técnica Online.
 
-</p>
+        </p>
 
 
-</div>
+        <p>
 
+            O seu futuro começa aqui.
+
+        </p>
+
+
+    </div>
 
 </footer>
 
 
 
-<!-- ========================= -->
-<!-- MODAL CURSO -->
-<!-- ========================= -->
-
-<div
-class="modal"
-id="courseModal">
-
-
-<div
-class="modal-content">
-
-
-<div
-class="modal-header">
-
-
-<div>
-
-
-<span class="badge">
-
-PRÉVIA DO CURSO
-
-</span>
-
-
-<h3
-id="modalCourseTitle">
-
-Curso
-
-</h3>
-
-
-</div>
-
-
-
-<button
-class="close"
-id="closeCourse">
-
-
-<i data-lucide="x"></i>
-
-
-</button>
-
-
-</div>
-
-
-
-<div class="lesson">
-
-
-<div>
-
-<strong>
-
-01. Introdução
-
-</strong>
-
-<br>
-
-<small>
-
-Apresentação do curso
-
-</small>
-
-</div>
-
-
-<span>
-
-Ao vivo
-
-</span>
-
-
-</div>
-
-
-
-<div class="lesson">
-
-
-<div>
-
-<strong>
-
-02. Fundamentos
-
-</strong>
-
-<br>
-
-<small>
-
-Conteúdo principal
-
-</small>
-
-</div>
-
-
-<span>
-
-Ao vivo
-
-</span>
-
-
-</div>
-
-
-
-<div class="lesson">
-
-
-<div>
-
-<strong>
-
-03. Projeto prático
-
-</strong>
-
-<br>
-
-<small>
-
-Aplicação do conteúdo
-
-</small>
-
-</div>
-
-
-<span>
-
-Ao vivo
-
-</span>
-
-
-</div>
-
-
-
-<button
-class="btn btn-primary"
-id="enrollBtn"
-style="
-width:100%;
-margin-top:25px;
-">
-
-
-<i data-lucide="user-plus"></i>
-
-Quero me matricular
-
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- ========================= -->
-<!-- MODAL LOGIN -->
-<!-- ========================= -->
-
-<div
-class="modal"
-id="loginModal">
-
-
-<div
-class="modal-content">
-
-
-<div
-class="modal-header">
-
-
-<div>
-
-
-<span class="badge">
-
-ÁREA DO ALUNO
-
-</span>
-
-
-<h3>
-
-Entrar
-
-</h3>
-
-
-</div>
-
-
-<button
-class="close"
-id="closeLogin">
-
-
-<i data-lucide="x"></i>
-
-
-</button>
-
-
-</div>
-
-
-
-<label>
-
-E-mail
-
-
-<div
-class="input-group">
-
-<i data-lucide="mail"></i>
-
-
-<input
-class="input"
-placeholder="aluno@tecbrasil.com">
-
-</div>
-
-
-</label>
-
-
-
-<label>
-
-Senha
-
-
-<div
-class="input-group">
-
-<i data-lucide="lock"></i>
-
-
-<input
-class="input"
-type="password"
-placeholder="••••••••">
-
-</div>
-
-
-</label>
-
-
-
-<button
-class="btn btn-primary"
-id="modalLogin"
-style="
-width:100%;
-margin-top:10px;
-">
-
-
-<i data-lucide="log-in"></i>
-
-Entrar
-
-
-</button>
-
-
-</div>
-
-
-</div>
-
-
-
-<!-- MENSAGEM -->
-
-<div
-class="toast"
-id="toast">
-
-Ação realizada!
-
-</div>
-
-
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
+    /* INICIAR ÍCONES */
 
-/* CARREGAR ÍCONES */
-
-lucide.createIcons();
-
+    lucide.createIcons();
 
 
-/* MENSAGEM */
 
-const toast =
-document.getElementById(
-    "toast"
-);
+    /* MENU MOBILE */
 
+    function toggleMenu() {
 
-function notification(
-    message
-) {
+        const menu =
+            document.getElementById("navMenu");
 
-    toast.innerText =
-        message;
+        menu.classList.toggle("open");
 
-    toast.classList.add(
-        "show"
-    );
+    }
 
 
-    setTimeout(
+
+    /* FECHA MENU AO CLICAR EM LINK */
+
+    document
+        .querySelectorAll("#navMenu a")
+        .forEach(link => {
+
+            link.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .getElementById("navMenu")
+                        .classList.remove("open");
+
+                }
+            );
+
+        });
+
+
+
+    /* BOTÃO COMEÇAR */
+
+    function comecarAgora() {
+
+        alert(
+            "A área de inscrição da TecBrasil será implementada em breve."
+        );
+
+    }
+
+
+
+    /* HEADER COM MAIS FUNDO AO ROLAR */
+
+    window.addEventListener(
+        "scroll",
         () => {
 
-            toast.classList.remove(
-                "show"
-            );
+            const header =
+                document.querySelector("header");
 
-        },
+            if (window.scrollY > 40) {
 
-        2500
-    );
+                header.style.background =
+                    "rgba(5, 9, 20, .94)";
 
-}
+            } else {
 
-
-
-/* ========================= */
-/* CURSOS */
-/* ========================= */
-
-const courseModal =
-document.getElementById(
-    "courseModal"
-);
-
-
-const courseTitle =
-document.getElementById(
-    "modalCourseTitle"
-);
-
-
-document
-.querySelectorAll(
-    ".course-card"
-)
-.forEach(
-    card => {
-
-
-        card.addEventListener(
-            "click",
-
-            () => {
-
-
-                courseTitle
-                .innerText =
-
-                    card.dataset.course;
-
-
-                courseModal
-                .classList
-                .add(
-                    "open"
-                );
-
+                header.style.background =
+                    "rgba(5, 9, 20, .76)";
 
             }
-        );
-
-
-    }
-);
-
-
-
-document
-.getElementById(
-    "closeCourse"
-)
-.addEventListener(
-    "click",
-
-    () => {
-
-        courseModal
-        .classList
-        .remove(
-            "open"
-        );
-
-    }
-);
-
-
-
-document
-.getElementById(
-    "enrollBtn"
-)
-.addEventListener(
-    "click",
-
-    () => {
-
-
-        courseModal
-        .classList
-        .remove(
-            "open"
-        );
-
-
-        notification(
-            "Interesse de matrícula registrado!"
-        );
-
-
-    }
-);
-
-
-
-/* ========================= */
-/* LOGIN */
-/* ========================= */
-
-const loginModal =
-document.getElementById(
-    "loginModal"
-);
-
-
-document
-.getElementById(
-    "loginOpen"
-)
-.addEventListener(
-    "click",
-
-    () => {
-
-        loginModal
-        .classList
-        .add(
-            "open"
-        );
-
-    }
-);
-
-
-document
-.getElementById(
-    "closeLogin"
-)
-.addEventListener(
-    "click",
-
-    () => {
-
-        loginModal
-        .classList
-        .remove(
-            "open"
-        );
-
-    }
-);
-
-
-
-document
-.getElementById(
-    "modalLogin"
-)
-.addEventListener(
-    "click",
-
-    () => {
-
-
-        loginModal
-        .classList
-        .remove(
-            "open"
-        );
-
-
-        notification(
-            "Login demonstrativo realizado!"
-        );
-
-
-    }
-);
-
-
-
-document
-.getElementById(
-    "portalLogin"
-)
-.addEventListener(
-    "click",
-
-    () => {
-
-        notification(
-            "Entrando na área do aluno..."
-        );
-
-    }
-);
-
-
-
-/* CLICAR FORA DO MODAL */
-
-courseModal
-.addEventListener(
-    "click",
-
-    event => {
-
-        if(
-            event.target ===
-            courseModal
-        ) {
-
-            courseModal
-            .classList
-            .remove(
-                "open"
-            );
 
         }
-
-    }
-);
-
-
-loginModal
-.addEventListener(
-    "click",
-
-    event => {
-
-        if(
-            event.target ===
-            loginModal
-        ) {
-
-            loginModal
-            .classList
-            .remove(
-                "open"
-            );
-
-        }
-
-    }
-);
-
+    );
 
 </script>
 
 
 </body>
-
 </html>
